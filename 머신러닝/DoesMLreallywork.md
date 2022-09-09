@@ -55,4 +55,49 @@
 - 잠재력이 매우 높은 data
 
 ## Learning to Perceive: Face Recognition
+- 기계학습의 두 번째 틈새 시장은 단순히 손으로 프로그래밍하기 너무 어려운 컴퓨터 프로그램을 만드는 곳
+- 많은 sensor 문제가 하나의 범주
+- 음성 인식 문제, image classification
 
+![캡처](https://user-images.githubusercontent.com/80622859/189297441-60787db2-39ac-44c2-b066-6f884d0b3304.PNG)
+
+- 역전파로 훈련
+- MLP의 특성 : 훈련 중에 입력 이미지의 중요한 특징을 추출. Input image의 새로운 표현을 발견
+- 양의 가중치 : 밝은 흰색, 음의 가중치 : 어두은 검은색, 0에 가까운 값 : 회색
+- pixel의 값을 통해 밝기 파악. ex) 어두운 색은 배경
+- 아직은 발전이 필요. ex) 베이지안 + 신경망, Long-term learning
+
+## A Self-Customizing News Reader
+- 추천시스템
+- ex) NEWS WEEDER 
+- 사용자를 대신하여 온라인 뉴스 기사의 범람을 filterling. 1~5점 점수를 통해 관심도 파악
+- 특정 텍스트 문서 집합에서 사용자 관심을 어떻게 파악할 수 있는가? 어떤 알고리즘으로 파악해야 하는가?
+- 나이브 베이지안 학습 방법 + 정보 검색의 초기 방법
+- 텍스트 기사는 하나의 긴 특징 vector로 표현(각 값은 단어의 빈도 수,BOW)
+- 베이지안 추론으로 조건부 확률을 구한 후 선형 조합을 사용하여 최종 예측
+- 사용자가 읽지 않은 기사는 건너뜀
+
+![캡처](https://user-images.githubusercontent.com/80622859/189299391-d62db9d1-6bae-4ea2-86ec-0f60cddefb2d.PNG)
+
+- BOW 방법을 넘어서 명사 구절과 text 의미 부분 해석과 같은 더 많은 연구가 진행
+
+## Where Next?
+- 기계 학습은 컴퓨터 과학 내의 여러 틈새 시장에 영향을 주고 있음
+- 더 많은 data가 online에 나타나게 되면서 ML의 영향은 점점 더 커질 것임
+- 역사를 길게 봤을 때, 아직 컴퓨터는 50년밖에 안 된 젊은 분야. 앞으로 기대가 되는 분야
+
+### Incorporation of prior knowledge with training data
+- 앞에서 설명한 기계학습의 두드러진 특징은 초기 지식이 없으며 많은 양의 훈련데이터로부터만 학습해야 한다고 가정
+- 사전 지식은 샘플 추출과 학습 정확도를 높이는데 영향을 줌
+- 사전 지식 + data
+
+### Lifelong learning
+- 현재 학습 시스템은 한 가지 작업만 다룸
+- 축적된 지식을 후속 학습을 하는데 이용(재사용)하는 기술 개발 + 스스로 새로운 표현
+- ex) 로봇 학습, 자율 소프트웨어
+
+### Machine learning embedded in programming languages
+- ML이 소프트웨어에서 쉽게 작동하기 위한 새로운 프로그래밍 언어 또는 개발 환경 필요
+
+### Machine learning for natural language
+- 텍스트에 많은 영향을 미칠 것

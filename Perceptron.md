@@ -70,3 +70,16 @@
 - predominant phase는 무작위적이지만 A-unit이 강화되면(활성 유닛이 값을 얻도록 허용되면), 나중에 동일한 자극이 나타낼 때, 동일한 반응이 더 강하게 재발하는 경향이 있고 이는 학습이 일어났다고 말할 수 있음
 
 ## ANALYSIS OF THE PREDOMINANT PHASE
+- 항상 A-unit의 활성화를 위한 고정 임계값인 $\theta$를 가정
+- 고정 임계값 퍼셉트론의 학습 곡선을 예측하기 위해 두 변수를 정의
+- $P_a$ : 주어진 크기의 자극에 의해 활성화된 A-unit의 예상 비율
+- $P_c$ : 주어진 자극인 $S_1$에 반응하는 A-unit이 또 다른 주어진 자극 $S_2$에 반응할 조건부 확률
+- Retina의 크기가 커짐에 따라 S-points의 수가 빠르게 유의미한 parameter가 되지 않게 되고, $P_a$와 $P_c$의 값이 무한히 많은 retina에 대해 가질 수 있는 값에 근접.
+- Retina Equationm
+
+![캡처](https://user-images.githubusercontent.com/80622859/189484180-e03b8f6c-2bcf-4772-8d04-469d480fe662.PNG)
+
+![캡처](https://user-images.githubusercontent.com/80622859/189484198-248254ff-f147-4230-80fd-cd3d1f08827c.PNG)
+
+- L : 첫 번째 자극인 S1에 의해 조명되는 S점의 비율(S2에 의해 조명되지 않음)
+- G : 두 번째 자극에 포함된 잔류 S-set의 비율

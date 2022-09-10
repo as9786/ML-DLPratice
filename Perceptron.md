@@ -44,3 +44,29 @@
 2. 자극은 projection area(투영 영역,$A_1$)에 있는 연관 세포(A-units)로 전달. 투영 영역의 cell은 각각 감각점으로부터 다수의 연결을 받음. 특정 A 단위로 자극을 전달하는 점들의 집합을 해당 A 단위의 원점이라고 함(origin points).
 3. Projection area와 연관 지역 사이에 연결들은 무작위. A2 집합의 각 A 단위는 A1 집합의 원점으로부터 일정 수의 연결을 받지만, 이러한 원점들은 투영 영역 전체에 무작위로 존재. 연결 분포를 제외하고, A2 장치는 A1 장치와 동일하며, 유사한 조건에서 응답.
 4. 반응 R1, R2,...,Rn은 A-unit과 거의 같은 방식으로 반응. 위의 그림의 화살표는 신경망을 통한 방향을 나타냄. A까지 모든 연결이 전달되고 feedback은 없음. 마지막 연결 집합인 A_2과 R-units 사이에 연결은 양방향. 피드백 연결을 제어하는 규칙은 아래와 같은 대안 존재
+
+(a) 각 반응에는 own-source-set에 대한 excitatory feedback(흥분 피드백) 연결이 있거나
+(b) 각 반응에는 own-source-set에 대한 inhibitory feedback(억제 피드백) 연결이 있음
+
+- 통계적 분리 가능성 이론에 부합하는 단순화된 퍼셉트론
+
+![캡처](https://user-images.githubusercontent.com/80622859/189483487-ee9a4f8a-a2f4-4f23-82b1-21217aaf5ce6.PNG)
+
+- A-unit에 의해 전달되는 자극은 전송을 완료할 확률인 특정값 V로 특정지어질 수 있음
+- A가 높은 값을 갖는 경우, 모든 출력 pulse는 낮은 값을 갖는 A 단위로부터의 pulse보다 더 효과적이거나 말단 node에 도달할 가능성이 더 높다고 간주
+- A-unit의 값은 절대적으로 일정하지는 않음
+- 일반적으로 활동 기간은 cell의 가치를 증가시키는 경향이 있는 반면, 그 값은 비활성으로 붕괴될 수 있음
+
+![캡처](https://user-images.githubusercontent.com/80622859/189483745-a1e3419e-afc3-4183-b65a-3f67b08b9499.PNG)
+
+- $\alpha$ system : 활성 cell은 단순히 모든 자극에 대한 값의 증가를 얻고, 이 값을 무한히 유지
+- $\beta$ system : 각 source 집합은 일정한 비율의 이득이 허용, 증가분은 source set의 cell들 사이에 그들의 활동에 비례하여 할당
+- $\gamma$ system : 활성 cell은 source set의 비활성 cell을 희생하여 값을 얻음 => source set의 총 값은 항상 일정
+- 분석 목적을 위해 자극에 대한 시스템의 반응에서 두 단계를 구별하는 것이 편리
+
+![캡처](https://user-images.githubusercontent.com/80622859/189483857-9bf9b577-42bf-42a0-a111-2d6db3d23197.PNG)
+
+- predominant phase(지배적 단계) : A-unit의 일부 비율(그림에서의 실선)은 자극에 반응하지만, R-unit은 여전히 비활성화.  이 단계는 일시적인 현상이며 반응 중 하나를 활성화하고 자체 source-set을 비활성화시킴. => 다른 반응의 발생 방지(postdominant phase)
+- predominant phase는 무작위적이지만 A-unit이 강화되면(활성 유닛이 값을 얻도록 허용되면), 나중에 동일한 자극이 나타낼 때, 동일한 반응이 더 강하게 재발하는 경향이 있고 이는 학습이 일어났다고 말할 수 있음
+
+## ANALYSIS OF THE PREDOMINANT PHASE

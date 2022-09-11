@@ -8,4 +8,5 @@
 
 ## Model
 - where -> \<where\>. 단어의 양 끝에 <, >를 더하여 접두사와 접미사를 구분할 수 있도록 함
-- 
+- <wh, whe, her, ere, re> (n = 3)
+- $3 \leq n \leq 6$ 범위의 n-gram 사용

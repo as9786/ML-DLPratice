@@ -106,3 +106,16 @@
 - 중심 단어와 주변 단어의 내적값을 이 model의 예측값으로 하고, label과의 오차로부터 역전파 수행
 - 학습 후에는 좌측의 embedding matrix를 embedding vector로 사용할 수 있고, 두 행렬을 더한 후 사용하거나 연결하여 사용할 수도 있음
  
+## Subsampling of Frequent Words
+- 드물게 등장하는 단어와 빈번하게 등장하는 단어의 가중치 측정
+- 모든 문장과 문서에서 자주 등장하는 단어는 별로 의미가 없음. ex) a, the, in...
+- 더 많이 발생하는 조합에 대해서 상관관계를 만드는데 있어 더 낮은 가중치를 부여
+- 빈번하게 등장하는 단어는 학습에 있어서 큰 변화를 주지 못하도록 함
+
+![다운로드](https://user-images.githubusercontent.com/80622859/189523343-27561b24-15ab-4d14-bc2a-bd2e6b999273.png)
+
+- $f(w_i)$ : 단어 $w_i$의 빈도수, t : 정해진 threshold, 일반적으로 $10^{-5}$
+- 빈도수가 매우 높은 단어들은 subsampling 과정을 통하여 sampling될 확률이 감소
+- 이는 중요한 단어의 representation quality를 개선하는 결과
+
+## Learning Phrases

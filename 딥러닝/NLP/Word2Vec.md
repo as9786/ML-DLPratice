@@ -52,7 +52,19 @@
 - 손실 함수 : Cross entropy
 
 ### Hierarchical Softmax
+- 연산이 너무 비대해지는 것을 막기 위해 고안된 방법
 - Full softmax에 근접하면서 연산을 효율적으로 할 수 있는 방법
-- Output node를 W에 대한 확률분포로 대신하여 log(W)에 대한 확률분포를 얻을 수 있음
-- Binary tree를 이용해서 W의 output node를 표현
-- Tree의 각 leaf nodes는 
+- Softmax를 통해 확률을 구하고자 할 때 분모로 모두 더하는 방식
+- Model 구조 자체를 full binary tree 구조로 바꾼 후에 단어들은 leaf node에 배치
+
+![images_xuio_post_80b8fcca-1f8e-42c3-ac62-91993efa2641_image](https://user-images.githubusercontent.com/80622859/189518139-903eb12c-7295-4c7b-a2cf-48f003337c04.png)
+
+- Leaf node까지 가기 위해 거쳐가는 node들은 vector가 존재하며 이를 학습시키는 것이 목적
+- ex) w4라는 단어의 주변 단어가 w2라는 단어일 때 이 둘에 대한 확률 값 계산
+- 각 leaf node까지 가는데 만나는 node에 해당하는 vector들을 내적해주고 sigmoid 함수($\theta$)를 통해서 확률값으로 만들어준 이후 이들을 곱해나가며 leaf node까지 감
+- 결과적으로 sigmoid 함수만 이용해 softmax를 사용하지 않아도 됨
+
+![1](https://user-images.githubusercontent.com/80622859/189518191-c76e61df-0177-4ed5-85a2-436c05faedeb.png)
+
+- Root로부터 내려갈 때 이전 node로부터 좌측으로 이동하면 +1, 우측으로 이동하면 -1
+- sigmoid 함수의 특징 : $\sigma (x) + \sigma (-x) = 1$

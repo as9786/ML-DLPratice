@@ -20,3 +20,6 @@
 - Recursive autoencoders : 결합된 단어로 구성된 문장의 의미를 표현하기 위한 기술. Word vector 대신 phrase vector 사용 가능
 - Data-driven approach를 이용하여 다수의 phrases 확인 -> Phrases를 훈련 과정에서 개별적인 token으로 취급
 - Phrases vector의 평가를 위해 word와 pharses를 모두 포함하고 있는 analogical reasoning task 
+- 단순한 vector의 덧셈으로 의미있는 결과를 만들어낼 수 있음 발견
+- ex) Russia + river ~= Volga River
+- 언어에 대한 이해 정도를 수학적인 연산을 통해 

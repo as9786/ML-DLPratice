@@ -10,3 +10,10 @@
 - where -> \<where\>. 단어의 양 끝에 <, >를 더하여 접두사와 접미사를 구분할 수 있도록 함
 - <wh, whe, her, ere, re> (n = 3)
 - $3 \leq n \leq 6$ 범위의 n-gram 사용
+
+![render](https://user-images.githubusercontent.com/80622859/189525697-2b43779f-5f2d-44c4-bff7-b1ebb5ec4be6.png)
+
+- 단어를 n-gram vector의 합으로 나타냄
+- 단어 간에 표현을 공유하도록 하여 희소 단어도 의미 있는 표현을 배움
+- ex) eat, eating, eats와 같이 eat이라는 원래 단어에서 파생된 단어들의 표현을 공유함으로써 학습
+- 

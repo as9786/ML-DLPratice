@@ -32,4 +32,23 @@
 
 - C : training context의 크기, 크기가 클수록 결과는 좋아지지만 훈련에 소요되는 시간도 증가
 - 수식
-- 
+
+![render (1)](https://user-images.githubusercontent.com/80622859/189517820-a09f16bb-5ad2-4f5c-8539-d7724efd201b.png)
+
+### Skip-gram example
+- window size = 2
+
+![다운로드 (5)](https://user-images.githubusercontent.com/80622859/189517859-57fc84ec-a4dc-421d-b9a2-637ced132698.png)
+
+![다운로드 (6)](https://user-images.githubusercontent.com/80622859/189517869-7990cfa2-53c9-4ab6-8bd7-7fae790712eb.png)
+
+- 단일 은닉층만 존재하는 얕은 신경망
+- N : 은닉층의 크기, V : 단어 집합의 크기, W : 입력층과 은닉층 사이의 가중치 행렬, V x N 크기, input word matrix, $W'$ : 은닉층과 출력층 사이의 가중치 행렬, N x V 크기, output word matrix
+- $W\,,W'$는 전치 관계가 아닌 서로 다른 행렬이며 학습 전에는 모두 무작위 값을 가짐
+- 학습
+
+![다운로드 (7)](https://user-images.githubusercontent.com/80622859/189517953-de06a0f6-8309-4e87-8293-0357e2f8b362.png)
+
+- 손실 함수 : Cross entropy
+
+

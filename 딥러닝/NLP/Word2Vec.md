@@ -30,3 +30,6 @@
 
 ![다운로드 (4)](https://user-images.githubusercontent.com/80622859/189517716-171139d9-bc51-452b-bd7d-fb50f2d78d18.png)
 
+- C : training context의 크기, 크기가 클수록 결과는 좋아지지만 훈련에 소요되는 시간도 증가
+- 수식
+- 

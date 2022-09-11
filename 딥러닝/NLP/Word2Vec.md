@@ -23,3 +23,10 @@
 - 단순한 vector의 덧셈으로 의미있는 결과를 만들어낼 수 있음 발견
 - ex) Russia + river ~= Volga River
 - 언어에 대한 이해 정도를 수학적인 연산을 통해 
+
+## The Skip-gram Model
+- 문장이나 문서에서 주변 단어들을 예측하는 단어 표현을 찾는 것
+- $w_1, w_2,w_3,...,w_t$에 대하여 log 확률의 평균을 최대화하는 것 
+
+![다운로드 (4)](https://user-images.githubusercontent.com/80622859/189517716-171139d9-bc51-452b-bd7d-fb50f2d78d18.png)
+

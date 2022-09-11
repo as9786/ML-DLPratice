@@ -101,3 +101,8 @@
 - 입력 1인 중심 단어의 table look up을 위한 embedding table, 다른 하나는 입력 2인 주변 단어의 table look up을 위한 embedding table
 - 각 단어는 각 embedding table을 table look up하여 embedding vector로 표현 
 
+![그림7](https://user-images.githubusercontent.com/80622859/189523081-785fd889-da9a-4edc-b67d-f43458800208.png)
+
+- 중심 단어와 주변 단어의 내적값을 이 model의 예측값으로 하고, label과의 오차로부터 역전파 수행
+- 학습 후에는 좌측의 embedding matrix를 embedding vector로 사용할 수 있고, 두 행렬을 더한 후 사용하거나 연결하여 사용할 수도 있음
+ 

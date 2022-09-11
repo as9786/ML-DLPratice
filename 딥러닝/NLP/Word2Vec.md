@@ -51,4 +51,8 @@
 
 - 손실 함수 : Cross entropy
 
-
+### Hierarchical Softmax
+- Full softmax에 근접하면서 연산을 효율적으로 할 수 있는 방법
+- Output node를 W에 대한 확률분포로 대신하여 log(W)에 대한 확률분포를 얻을 수 있음
+- Binary tree를 이용해서 W의 output node를 표현
+- Tree의 각 leaf nodes는 

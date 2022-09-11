@@ -61,7 +61,7 @@
 
 - Leaf node까지 가기 위해 거쳐가는 node들은 vector가 존재하며 이를 학습시키는 것이 목적
 - ex) w4라는 단어의 주변 단어가 w2라는 단어일 때 이 둘에 대한 확률 값 계산
-- 각 leaf node까지 가는데 만나는 node에 해당하는 vector들을 내적해주고 sigmoid 함수($\theta$)를 통해서 확률값으로 만들어준 이후 이들을 곱해나가며 leaf node까지 감
+- 각 leaf node까지 가는데 만나는 node에 해당하는 vector들을 내적해주고 sigmoid 함수( $\theta$ )를 통해서 확률값으로 만들어준 이후 이들을 곱해나가며 leaf node까지 감
 - 결과적으로 sigmoid 함수만 이용해 softmax를 사용하지 않아도 됨
 
 ![1](https://user-images.githubusercontent.com/80622859/189518191-c76e61df-0177-4ed5-85a2-436c05faedeb.png)

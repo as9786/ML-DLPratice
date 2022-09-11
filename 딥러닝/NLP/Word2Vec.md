@@ -68,3 +68,36 @@
 
 - Root로부터 내려갈 때 이전 node로부터 좌측으로 이동하면 +1, 우측으로 이동하면 -1
 - sigmoid 함수의 특징 : $\sigma (x) + \sigma (-x) = 1$
+
+## Negative Sampling
+- 단어에 대한 학습을 보다 효율적으로 하기 위해서 고안된 방식
+- Parameter를 update 시킬 negative sample 몇 개를 일부만 뽑아서 그것에 해당하는 parameter를 update
+- 기본적으로 영향도가 높은 단어들이 선택 되고, 일부가 무작위로 선택
+- 영향도가 높은 sample에 대해서는 positive를 부여, 그렇지 않은 단어에는 negative 부여 => 이진 분류
+- 주변부 단어로 선택되는 것은 빈번하게 등장하는 단어들 -> 빈번하게 출현하는 단어들에 대한 학습에 유리
+- 전체 corpus 중 문장에 사용되는 비중이 높은 단어를 우선적으로 가중치를 줘서 선별
+
+![images_xuio_post_783bec69-7553-42a7-be9a-7fb19ced9640_image](https://user-images.githubusercontent.com/80622859/189522691-33d29414-fcd6-4fb5-adba-70d52153566e.png)
+
+- 해당 확률은 i번째 단어에 대한 $f(w_i)$ = 단어의 빈도 = 출현횟수/전체 corpus 수
+- 보통 위의 식에 3/4 제곱을 취해줌
+
+### Skip-Gram with Negative Sampling,SGNS)
+- 중심 단어와 주변 단어가 모두 입력이 되고, 이 두 단어가 실제로 window 크기 내에 존재하는 이웃 관계인지 그 확률을 예측
+- 기존의 skip-gram dataset -> SGNS dataset
+
+![그림3](https://user-images.githubusercontent.com/80622859/189522781-8dc491bb-8c26-4cb0-a61c-e71a007e3bf4.png)
+
+- 기존의 skip-gram dataset에서 중심 단어와 주변 단어를 각각 입력1, 입력2로 둠
+- 이 둘은 실제로 window size 내에서 이웃 관계였으므로 label = 1
+- label = 0인 dataset
+
+![그림4](https://user-images.githubusercontent.com/80622859/189522832-8ead96b9-d08b-4c88-8e27-ef076f2733f8.png)
+
+- 주변 단어 관계가 아닌 단어들을 입력2로 삼기 위해 단어 집합에서 무작위로 선택한 단어들을 입력2로 하고, label은 0으로 지정
+
+![그림5](https://user-images.githubusercontent.com/80622859/189522899-e491911e-c78b-48ad-b88b-3ae56ff5f993.png)
+
+- 입력 1인 중심 단어의 table look up을 위한 embedding table, 다른 하나는 입력 2인 주변 단어의 table look up을 위한 embedding table
+- 각 단어는 각 embedding table을 table look up하여 embedding vector로 표현 
+

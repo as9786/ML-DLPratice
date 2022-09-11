@@ -119,3 +119,19 @@
 - 이는 중요한 단어의 representation quality를 개선하는 결과
 
 ## Learning Phrases
+- 많은 구들은 개별적인 단어들의 결합으로 얻어질 수 없는 의미를 가지고 있음
+- 특정 맥락에서만 자주 등장하는 단어쌍을 하나의 token으로
+- ex) New York Times -> Unique token in training data <-> this is -> 그대로 남겨둠
+- 어휘의 크기를 크게 키우지 않으면서도 많은 reasonable phrases를 얻을 수 있음
+- 이론적으로 skip-gram model에서 모든 n-gram에 대하여 학습 가능, but causes out of memory
+- Phrases를 text에서 구분하기 위해 data-driven approach 이용. 
+- Use score by using Uni-gram and bi-gram
+
+![1](https://user-images.githubusercontent.com/80622859/189523753-a5afb6d4-bf57-4db0-9e33-f072dec1bc53.png)
+
+- δ : hyperparameter, 매우 빈번하지 않은 단어로 구성된 너무 많은 구를 방지, 별로 사용되지 않은 구는 제외
+- Threshold를 넘어선 점수를 가진 bi-gram이 선택
+
+- 간단한 vector 간의 연산을 통해 정교한 유추 가능
+- 각각 vector들의 element-wise 합을 통해 의미적으로 단어를 결합 = 또 다른 linear structure
+- 문장 안의 주변 단어를 예측하는 word vector의 훈려과정에서 단어가 나태는 맥락의 분포를 표현 가능

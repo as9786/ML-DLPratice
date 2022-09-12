@@ -108,5 +108,12 @@
 
 - $P_\gamma (n_i|f(u))$을 dot product와 softmax로 아래와 같이 정의
 
+![render](https://user-images.githubusercontent.com/80622859/189605002-4184dbe3-9c8d-4947-9a7a-18eecc348a57.png)
 
+- 분모 부분을 계산하는데 필요한 계산 비용이 매우 큼 -> 모든 node에 대해 분모 항을 계산하지 않고 일정 개수의 netative node를 sampling 하는 방식으로 분모 항을 근사
+- 최종적인 optimizer objective
 
+![캡처](https://user-images.githubusercontent.com/80622859/189605226-459d2bc6-8ccf-48f9-9234-60fa88fdc956.PNG)
+
+#### Defining Neighbor via Biased Random Walk
+- 

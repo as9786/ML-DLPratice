@@ -96,4 +96,14 @@
 2. 어떤 방식으로 특정 node의 이웃을 정의하는가(parameterized random walk)
 
 #### Embedding Learning
-- V : 모든 node들의 집합. f : Embedding function, 각각의 node를 d차원의 고정 길이 vector로 mapping, $\mathbb{R}^{|V|\times d}$ 형태의 parameter. $\mathcal{N}_s (u)$ 특정 node u의 이웃 node 
+- V : 모든 node들의 집합. f : Embedding function, 각각의 node를 d차원의 고정 길이 vector로 mapping, $\mathbb{R}^{|V|\times d}$ 형태의 parameter. $\mathcal{N}_s (u)$ : 특정 node u의 이웃 node 
+- Embedding을 학습하는 기본적인 접근
+
+![캡처](https://user-images.githubusercontent.com/80622859/189604149-1d24d9e7-b26b-4d36-a7f1-2aa2581ee44f.PNG)
+
+- 어떤 node u의 embedding(encoding된 표현)이 주어졌을 때, 이것을 decoding(reconstruct)한 결과가 u의 이웃 node일 확률을 최대화시키는 f를 찾음 = Embedding 함수에 대한 MLE
+- $P_\gamma (\mathcal{N}_s (u)|f(u))$는 아래와 같이 개별 확률의 곱으로 표현(이웃 node들간의 독립 가정)
+
+![캡처](https://user-images.githubusercontent.com/80622859/189604506-b882053a-d1c0-42a5-8f3e-98c5b3772550.PNG)
+
+

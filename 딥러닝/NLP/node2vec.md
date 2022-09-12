@@ -70,3 +70,12 @@
 
 ![img](https://user-images.githubusercontent.com/80622859/189601502-28c64761-f4bb-4fc0-86cf-f339469db6f6.gif)
 
+- Root node(혹은 다른 임의의 노드)에서 시작해서 다음 분기(branch)로 넘어가기 전에 해당 분기를 완벽하게 탐색하는 방식
+- 모든 node를 방문하고자 하는 경우
+- BFS보다 간단
+- 속도는 BFS보다 느림
+
+#### 2. 너비 우선 탐색(BFS, Breadth-First Search)
+- 최대한 넓게 이동한 다음, 더 이상 갈 수 없을 때 아래로 이동
+
+![img (1)](https://user-images.githubusercontent.com/80622859/189601784-87ae4e10-ea47-4a8f-93d6-4141352338c7.gif)

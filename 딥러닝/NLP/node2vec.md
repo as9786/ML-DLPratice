@@ -74,8 +74,16 @@
 - 모든 node를 방문하고자 하는 경우
 - BFS보다 간단
 - 속도는 BFS보다 느림
+- Stack or 재귀함수
 
 #### 2. 너비 우선 탐색(BFS, Breadth-First Search)
 - 최대한 넓게 이동한 다음, 더 이상 갈 수 없을 때 아래로 이동
 
 ![img (1)](https://user-images.githubusercontent.com/80622859/189601784-87ae4e10-ea47-4a8f-93d6-4141352338c7.gif)
+
+- Root node(혹은 다른 임의의 node)에서 시작해서 인접한 node를 먼저 탐색하는 방법, 시작 정점으로부터 가까운 정점을 먼저 방문하고 멀리 떨어져 있는 정점을 나중에 방문하는 순회 방법
+- 최단 경로
+- Queue
+
+- BFS, DFS 시간복잡도 : 인접 리스트 : O(N+E), 인접 행렬 : $O(N^2)$ (N : node, E : 간선)
+

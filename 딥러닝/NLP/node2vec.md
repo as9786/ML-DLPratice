@@ -131,3 +131,7 @@
 - p를 크게 하고, q를 작게 정의하면 멀리 있는 node도 이웃 node로 정의(structural equivalence)
 - p를 작게 하고, q를 크게 하면 가까이 있는 node만 이웃 node(homophily)
 
+### Learning edge feature
+- Random wakl는 기본적으로 network의 node 간 연결 구조를 기반으로 하기 때문에 개별 node의 feature representation을 통해 bootstrap 접근 방식을 사용하여 node 쌍으로 확장
+- 두 node u와 v가 주어지면, g : V x V -> $mathbb{R}^{d'}$ where d' is a representation g(u,v)
+- 연산이 간선이 존재하지 않더라도 모든 쌍의 node들에 대해서 정의되기를 원함 -> Link prediction에 도움이 됨

@@ -4,3 +4,7 @@
 - https://coshin.tistory.com/44
 - https://wikidocs.net/69141
 - https://velog.io/@xuio/NLP-%EB%85%BC%EB%AC%B8%EB%A6%AC%EB%B7%B0-Distributed-Representations-of-Words-and-Phrases-and-their-Compositionality
+
+# Enriching Word Vectors with Subword Information
+- https://dsbook.tistory.com/303
+- https://hong-yp-ml-records.tistory.com/57

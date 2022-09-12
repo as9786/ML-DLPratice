@@ -31,4 +31,24 @@
 1. 모든 node에 하나 이상의 class label이 할당되는 multi-label classification
 2. Node 쌍이 주어진 edge의 존재를 예측하는 link prediction task
 
-## 
+## Related Work
+- Graph의 다양한 행렬표현
+- Laplacian and the adjacency matrices
+
+### Laplacian
+- 일차 미분
+
+![img](https://user-images.githubusercontent.com/80622859/189599856-a84edf1a-0076-4afe-8c7a-3d0ba4d1612c.png)
+
+- 2차 편미분
+
+![다운로드](https://user-images.githubusercontent.com/80622859/189599900-d88228fd-afb9-4278-b6bd-1b52e22f418b.png)
+
+- 2차 미분
+
+![img (1)](https://user-images.githubusercontent.com/80622859/189599935-c3f7da1d-de5b-46fa-8122-f7f3a241ddba.png)
+
+- 이차 미분을 나타내는 연산자는 $\nabla^2$이며 라플라시안 또는 델타 스퀘어라고 읽음
+- Laplacian Operator
+
+![다운로드 (1)](https://user-images.githubusercontent.com/80622859/189600328-cfd0ef68-115c-493b-a1a5-0e5aa6ec6305.png)

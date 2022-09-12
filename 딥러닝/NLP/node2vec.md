@@ -116,4 +116,18 @@
 ![캡처](https://user-images.githubusercontent.com/80622859/189605226-459d2bc6-8ccf-48f9-9234-60fa88fdc956.PNG)
 
 #### Defining Neighbor via Biased Random Walk
-- 
+
+![캡처](https://user-images.githubusercontent.com/80622859/189605691-e177c6f2-ac25-4b87-9c79-0776ec6b055b.PNG)
+
+- Node t에서 random wakl를 1회 수행하여 v로 이동하였다고 할 때, 1/p에 비례하는 확률로 이전 node로 돌아가고 1/q에 비례하는 확률로 아예 새로운 node를 탐색하며 1에 비례하는 확률로 이전 노드 t와의 거리가 1인 $x_1$로 이동
+
+![캡처](https://user-images.githubusercontent.com/80622859/189605908-0d37b350-09b4-4563-81d5-e7a2a99be9ce.PNG)
+
+- $\alpha_{pq} (t,x)$ : Biased random walk를 위한 정규화되지 않은 확률(unnormalized probability)
+- $d_{tx}$ : 이전 node t와 이동 후의 node x간의 거리
+- p와 q는 hyperparameter
+- p : Return parameter, 높으면 위치적으로 거리가 멀더라도 이웃 node로 정의, 작으면 local node(위치적으로 가까운 node)를 이웃 node로 정의
+- q : In-Out parameter, q > 1 -> 이전 node인 t와 가까운 node를 이웃 node로 정의, q < 1 -> 이전 node t로부터 거리가 먼 node를 이웃 node로 정의
+- p를 크게 하고, q를 작게 정의하면 멀리 있는 node도 이웃 node로 정의(structural equivalence)
+- p를 작게 하고, q를 크게 하면 가까이 있는 node만 이웃 node(homophily)
+

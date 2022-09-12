@@ -106,4 +106,7 @@
 
 ![캡처](https://user-images.githubusercontent.com/80622859/189604506-b882053a-d1c0-42a5-8f3e-98c5b3772550.PNG)
 
+- $P_\gamma (n_i|f(u))$을 dot product와 softmax로 아래와 같이 정의
+
+
 

@@ -23,4 +23,12 @@
 - SGD를 사용하여 사용자 지정 graph 기반 목적 함수를 최적화
 - d차원 feature space에서 node의 network 이웃을 보존할 가능성을 최대화하는 feature representation을 반환
 - Use a 2nd order random wakl approach to generate network neighborhoods for nodes
-- 
+- Key : defining a flexible notion of a node's network neighborhood
+- node2vec은 적절한 이웃 개념을 선택함으로써 network의 역할 및 속한 community를 기반으로 node를 구성하는 표현을 학습
+- 이전 작업을 일반화하고 network에서 관찰된 동등성의 전체 spectrum modeling
+- 개별 node의 feature representation이 pairs of noded(edge)로 확장 -> Node뿐만 아니라 edge까지 포함하는 예측 작업
+- 두 가지 예측 작업
+1. 모든 node에 하나 이상의 class label이 할당되는 multi-label classification
+2. Node 쌍이 주어진 edge의 존재를 예측하는 link prediction task
+
+## 

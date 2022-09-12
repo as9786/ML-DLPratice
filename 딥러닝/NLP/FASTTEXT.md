@@ -16,6 +16,16 @@
 - <wh, whe, her, ere, re> (n = 3)
 - $3 \leq n \leq 6$ 범위의 n-gram 사용
 
+![캡처](https://user-images.githubusercontent.com/80622859/189586139-e86b6381-12b2-4922-8179-cf2964bed971.PNG)
+
+- OOV에 대한 학습 능력 향상
+- ex) birthplace라는 단어를 학습하지 않은 상태였더라도 다른 단어의 n-gram에서 birth와 place를 학습한 적이 있다면 birthplace의 embedding vector를 만들 수 있게 됨
+- 오타와 같은 빈도수가 낮은 단어에 대한 학습 능력 향상
+- ex) where를 오타를 포함한 wherre와 3-grams로 비교
+- where -> <wh, whe, her, ere, re>
+- wherre -> <wh, whe, her, err, rre, re>
+- 2개의 subword만 다름
+
 ![render](https://user-images.githubusercontent.com/80622859/189525697-2b43779f-5f2d-44c4-bff7-b1ebb5ec4be6.png)
 
 - 단어를 n-gram vector의 합으로 나타냄

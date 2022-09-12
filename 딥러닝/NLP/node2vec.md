@@ -52,3 +52,13 @@
 - Laplacian Operator
 
 ![다운로드 (1)](https://user-images.githubusercontent.com/80622859/189600328-cfd0ef68-115c-493b-a1a5-0e5aa6ec6305.png)
+
+- 선형(PCA) 및 비선형(IsoMap) 차원 축소 기법은 계산 효율성 측면에서 안 좋고, 다양한 pattern에 강하지 않음
+- Skip-gram model
+- 문서의 단어를 scan하고 모든 단어들을 포함시켜 단어의 특징들이 가까운 단어들을 예측할 수 있도록 하는 것이 목표
+- 단어 특징 표현은 negative sampling과 함께 SGD를 사용하여 우도 목표를 최적화
+- Skip-gram model의 영감을 받아 network를 문서로 표현함으로써 network에 대한 유추 확립
+- 문서가 단어의 집합인 것과 같은 방식으로, 기본 network에서 node 순서를 sampling하고 network를 순서 있는 node 순서로 바꿀 수 있음
+
+
+## Feature Learning Framework

@@ -62,3 +62,11 @@
 
 
 ## Feature Learning Framework
+
+### Classic search strategies
+
+#### 1. 깊이 우선 탐색(DFS, Depth-First Search)
+- 최대한 깊이 내려간 뒤, 더 이상 깊이 갈 곳이 없을 경우 옆으로 이동
+
+![img](https://user-images.githubusercontent.com/80622859/189601502-28c64761-f4bb-4fc0-86cf-f339469db6f6.gif)
+

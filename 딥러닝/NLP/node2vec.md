@@ -13,9 +13,13 @@
 - 한 쌍의 node가 그들을 연결하는 edge를 가져야 하는지 여부를 예측 ex) Social network에서 실제 친구 식별
 - Node와 edge에 대한 feature vector를 구성해야 함
 
-![캡처](https://user-images.githubusercontent.com/80622859/189596877-76c19d41-63b9-4377-ab6c-455f4bbdbbfa.PNG)
+### Homophily & Structural Equivalence
 
-- Node U와 $s_1$이 동일한 촘촘하게 짜여진 node community에 속하는 것을 관찰할 수 있는 반면, 두 개별 community's node U와 $s_6$는 hub node의 동일한 구조적 역할을 공유
+![image](https://user-images.githubusercontent.com/80622859/189602654-38e4d9e7-6ca6-4343-92a2-a778a01047d3.png)
+
+- Homophily(동질성) graph : 유사한 node가 가까운 거리에 위치, u가 $s_1\,, s_2\,, s_3\.. s_4$와 유사
+- Structural equivalence : 가까운 거리에 연결되어 있다고 해도 node의 성질이 비슷하다고 할 수 없음. 거리가 멀더라도 구조적으로 비슷한 역할을 하는 node가 유사한 노드. u와 $s_6$
+
 - Real-world networks commonly exhibit a mixture of such equivalences
 - 따라서 동일한 network community에서 node를 내장하는 표현을 학습할 수 있을뿐만 아니라 유사한 역할을 공유하는 node가 유사한 embedding을 갖는 표현을 학습할 수 있는 두 가지 원칙을 준수하는 유연한 algorithm을 허용해야 함
 
@@ -87,3 +91,9 @@
 
 - BFS, DFS 시간복잡도 : 인접 리스트 : O(N+E), 인접 행렬 : $O(N^2)$ (N : node, E : 간선)
 
+### node2vec
+1. 어떤 기준으로 node embedding 간의 유사성을 정의하는가(dot product)
+2. 어떤 방식으로 특정 node의 이웃을 정의하는가(parameterized random walk)
+
+#### Embedding Learning
+- V : 모든 node들의 집합 

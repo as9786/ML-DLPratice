@@ -8,3 +8,10 @@
 # Enriching Word Vectors with Subword Information
 - https://dsbook.tistory.com/303
 - https://hong-yp-ml-records.tistory.com/57
+
+# node2vec: Scalable Feature Learning for Networks
+- https://velog.io/@dongdori/Node2Vec-Shallow-embedding-for-node
+## Laplacian
+- https://100s.tistory.com/42
+## DFS, BFS
+- https://devuna.tistory.com/32

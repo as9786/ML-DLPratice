@@ -135,3 +135,9 @@
 - Random wakl는 기본적으로 network의 node 간 연결 구조를 기반으로 하기 때문에 개별 node의 feature representation을 통해 bootstrap 접근 방식을 사용하여 node 쌍으로 확장
 - 두 node u와 v가 주어지면, g : V x V -> $mathbb{R}^{d'}$ where d' is a representation g(u,v)
 - 연산이 간선이 존재하지 않더라도 모든 쌍의 node들에 대해서 정의되기를 원함 -> Link prediction에 도움이 됨
+
+## Discussion and Conclusion
+- Exploration-exploitation trade-off를 기반으로 고전적인 검색 전략을 설정 가능
+- 예측 작업에 적용될 때 학습된 표현에 대한 해석 가능성을 어느 정도 제공
+- 매개변수 p와 q를 통해 network 이웃을 탐색하는데 유연하고 제어 가능
+- 실용적인 관점에서 확장 가능

@@ -18,3 +18,9 @@
 - Node U와 $s_1$이 동일한 촘촘하게 짜여진 node community에 속하는 것을 관찰할 수 있는 반면, 두 개별 community's node U와 $s_6$는 hub node의 동일한 구조적 역할을 공유
 - Real-world networks commonly exhibit a mixture of such equivalences
 - 따라서 동일한 network community에서 node를 내장하는 표현을 학습할 수 있을뿐만 아니라 유사한 역할을 공유하는 node가 유사한 embedding을 갖는 표현을 학습할 수 있는 두 가지 원칙을 준수하는 유연한 algorithm을 허용해야 함
+
+### present work
+- SGD를 사용하여 사용자 지정 graph 기반 목적 함수를 최적화
+- d차원 feature space에서 node의 network 이웃을 보존할 가능성을 최대화하는 feature representation을 반환
+- Use a 2nd order random wakl approach to generate network neighborhoods for nodes
+- 

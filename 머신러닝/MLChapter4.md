@@ -79,7 +79,10 @@
 <img width="133" alt="캡처" src="https://user-images.githubusercontent.com/80622859/189904558-51d34359-b5b3-474d-85be-d51e52b5cb70.PNG">
 
 - $\bigtriangledown E(\vec{w})$ 그 자체가 vector, 그 성분들은 각각의 원소에 대한 E의 부분 도함수
-- 
+- 기울기는 E에서 가장 가파른 증가를 생성하는 방향을 지정 -> 이 vector의 음수는 가장 가파른 감소 방향 제시
+- 경사하강 방법
+
+
 
 
 

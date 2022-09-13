@@ -49,6 +49,35 @@
 
 ## 3.Gradient Descent and the Delta Rule
 - Perceptron 규칙은 학습 data가 선형적으로 분리될 수 있을 때 성공적인 가중치 vector를 찾지만, 학습 데이터가 선형적으로 분리되지 않으면 수렴하지 못할 수도 있음.
-- Delta Rule은 위의 문제점을 해결하기 위해 
+- Delta Rule은 위의 문제점을 해결하기 위해 등장
+- Key idea : 경사하강법을 이용해서 가능한 가중치 vector의 가설 공간을 검색하여 학습 data에 적합한 가중치를 찾는 것
+- 역전파의 기초
+- 임계값이 없는 perceptron을 훈련시키는 작업
+- 선형 단위로부터 가중치를 배우기 위해 training error를 측정하는 방법을 구체화
+- 많은 error 측정 방법이 있지만, 가장 공통정인 방법은 아래와 같음
+
+<img width="115" alt="캡처" src="https://user-images.githubusercontent.com/80622859/189902841-258f2da6-9d25-4a9a-8b87-a7be9578b48d.PNG">
+
+- D : training dataset, $t_d$ : training example의 target output, $o_d$ : linear unit의 output
+- E는 $t_d$와 $o_d$ 차이의 제곱의 반이며, 모든 훈련 예제에 걸쳐 합계됨
+- E는 $\vec{w}$의 함수 <- o는 가중치 vector에 의존
+
+### 1. VISUALIZING THE HYPOTHESIS SPACE
+
+<img width="355" alt="캡처" src="https://user-images.githubusercontent.com/80622859/189903742-1d829bea-16d8-4784-9670-f7ac1cdf6628.PNG">
+
+- 축 $w_o$와 $w_1$은 단순한 선형 단위의 두 가중치에 대해 가능한 값 -> 전체 가설 공간을 나타냄
+- 수직축 : 일부 고정된 훈련과 관련된 오류 E
+- E를 정의하기 위한 방법을 고려할때, 선형 단위의 경우 이 오류 표면은 항상 전역 최소값이 되어야 함
+- 경사하강법은 임의의 초기 가중치 vector로 시작한 다음 작은 단계로 반복적으로 수정하여 E를 최소화하는 가중치 vector를 결정
+- 위의 과정은 global minimum에 도달할 때까지 계속
+
+### 2. DERIVATION OF THE GRADIENT DESCENT RULE
+- 가장 가파른 하강 방향을 계산하기 위해서는 vector w의 각 성분에 대한 E의 도함수를 계산
+- 이러한 vector 도함수를 vector w에 대한 E의 기울기라고 함.
+
+<img width="133" alt="캡처" src="https://user-images.githubusercontent.com/80622859/189904558-51d34359-b5b3-474d-85be-d51e52b5cb70.PNG">
+
+
 
 

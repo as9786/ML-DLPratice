@@ -181,7 +181,44 @@
 
 <img width="341" alt="캡처" src="https://user-images.githubusercontent.com/80622859/189912533-1bf66dc8-efe1-466b-9b81-909aa3520b3b.PNG">
 
+### Adding Momentum
+- n번째 반복의 가중치 update가 (n-1)번째 반복동안 발생한 update에 부분적으로 의존
 
+![캡처](https://user-images.githubusercontent.com/80622859/189938457-a3ef441a-1e9b-4a36-b04b-374485780739.PNG)
 
+- $\delta w_{ji} (n)$ : n번째 반복 동안 수행된 가중치 update, $\alpha$ : 0과 1 사이 운동량이라는 상수
+- 우변의 두 번째 항은 운동량 항(momentum term)
+- $\alpha$의 효과 : 한 반복에서 다음 반복까지 공이 같은 방향으로 굴러가도록 하는 경향이 있는 운동량을 추가
+- Local minimum에 도달하여 운동량이 없을 경우 평평한 영역을 따라 공이 계속 굴러가도록 할 수 있음
+- 기울기가 변하지 않은 영역에서 탐색의 단계 크기를 점진적으로 증가시켜 수렴 속도를 높이는 효과
+
+### Learning in arbitary acyclic networks
+- 가중치를 update하는 규칙은 유지. 변하는 값은 delta 값 계산 절차
+- 
+#### Directed Acyclic Graph(DAG)
+- 순환을 가지지 않는 방향 그래프
+
+![다운로드](https://user-images.githubusercontent.com/80622859/189940042-6336606f-a6cb-4bb3-9469-969c513a1e2d.png)
+
+## 5. Remarks on the Backpropagation Algorithm
+
+### Convergence and Local Minima
+- 경사하강법을 통하여 E를 반복적으로 줄임
+- Multi Layer Network에서는 local mimnima가 많아 경사 하강을 하다가 갇힐 수 있음 = 반드시 global minimum으로 수렴하지 않음
+- E는 반드시 global minimum일 필요는 없음
+- Local minimum proble은 심각하게 발견되지 않음
+- 초기 가중치가 0에 가까운 값일 경우 초기 경사하강 동안 network는 입력에서 거의 선형인 매우 부드러운 기능을 보여줌
+- 이는 가중치가 0에 가까울 때 sigmoid 함수의 임계값 자체가 선형이기 때문
+- 시간이 지나야 비선형적인 기능 가능
+- Common heuristics to attempt to alleviate the problem
+1. Add momentum
+2. More use SGD then GD
+3. 동일한 data를 사용하여 여러 net을 훈련시키되 각 net이 서로 다른 무작위 가중치로 초기화
+
+### Representational Power of Feedforward Networks
+- Boolean Function
+- 연속 기능
+- 임의 함수
+- Feedforward network는 역전파를 위한 매우 표현적인 가설 
 
 

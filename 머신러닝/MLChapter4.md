@@ -121,6 +121,9 @@
 - 다층 네트워크의 경우에는 단일 최소 포물선 오류 표면과 달리 여러 개의 지역 최소값을 가질 수 있음
 
 #### 역전파 1단계
+
+<img width="291" alt="캡처" src="https://user-images.githubusercontent.com/80622859/189910521-52862ed2-f002-4dfb-b741-4642f77c7c11.PNG">
+
 - 순전파가 입력층에서 출력층으로 향한다면 역전파는 반대로 출력층에서 입력층 방향으로 계산하면서 가중치 update
 - 출력층 바로 이전의 은닉층을 N층이라고 하였을 때, 출력층과 N층 사이의 가중치를 update하는 단계를 역전파 1단계, 그리고 N층과 N층의 이전층 사이의 가중치를 update하는 단계를 역전파 2단계
 
@@ -133,4 +136,52 @@
 <img width="175" alt="캡처" src="https://user-images.githubusercontent.com/80622859/189910203-2bc0d63f-94c2-414e-baaa-62e542071121.PNG">
 
 - $E_{total}$ : 순전파를 진행하고 계산했던 전체 오차값
-- 
+
+<img width="337" alt="캡처" src="https://user-images.githubusercontent.com/80622859/189910367-c92f28e3-be9d-4ec1-a771-643e8b6b092c.PNG">
+
+<img width="403" alt="캡처" src="https://user-images.githubusercontent.com/80622859/189910428-e4ce9f58-5c65-4972-9e81-1f0c6e7d8029.PNG">
+
+- 두 번째 항
+- Sigmoid 함수의 미분 = $f(x) \times (1-f(x))$
+
+<img width="366" alt="캡처" src="https://user-images.githubusercontent.com/80622859/189910801-d8a2fcb0-0072-44e5-9bc2-eb5cb754b5bd.PNG">
+
+- 세번째 항
+
+<img width="152" alt="캡처" src="https://user-images.githubusercontent.com/80622859/189911071-321ad747-dc5c-456a-a88c-9e9fb0adc201.PNG">
+
+- 최종
+
+<img width="346" alt="캡처" src="https://user-images.githubusercontent.com/80622859/189911480-b10746ed-95fc-413d-84c9-6376a7587c2c.PNG">
+
+<img width="347" alt="캡처" src="https://user-images.githubusercontent.com/80622859/189911553-c94f336b-2cd7-4b7a-9fa4-925debed080d.PNG">
+
+#### 역전파 2단계
+
+<img width="297" alt="캡처" src="https://user-images.githubusercontent.com/80622859/189911692-833c97d1-0270-4058-93bf-c20828b9e031.PNG">
+
+- $w_1$ update = get $\frac{\partial E_{total}}{\partial w_1}
+
+<img width="184" alt="캡처" src="https://user-images.githubusercontent.com/80622859/189911919-0a7bb19f-f17d-4f8c-8491-a72183cf0ff8.PNG">
+
+<img width="145" alt="캡처" src="https://user-images.githubusercontent.com/80622859/189912041-b7dcd300-e16e-4793-9b30-9429dec30a29.PNG">
+
+<img width="272" alt="캡처" src="https://user-images.githubusercontent.com/80622859/189912137-addc849b-9b9a-4d9e-a902-668704388e74.PNG">
+
+<img width="324" alt="캡처" src="https://user-images.githubusercontent.com/80622859/189912265-e6117b18-7028-40cd-930b-38b3f5bdbea3.PNG">
+
+- 첫번째 항을 구함
+- 나머지 두 항
+
+<img width="368" alt="캡처" src="https://user-images.githubusercontent.com/80622859/189912380-ea3789f8-86ea-44d1-b4fd-2fbf031ba2ab.PNG">
+
+- 최종
+
+<img width="310" alt="캡처" src="https://user-images.githubusercontent.com/80622859/189912475-e3b92a01-b147-4c00-b97b-ef43dd8aa313.PNG">
+
+<img width="341" alt="캡처" src="https://user-images.githubusercontent.com/80622859/189912533-1bf66dc8-efe1-466b-9b81-909aa3520b3b.PNG">
+
+
+
+
+

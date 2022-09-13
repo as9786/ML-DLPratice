@@ -82,6 +82,17 @@
 - 기울기는 E에서 가장 가파른 증가를 생성하는 방향을 지정 -> 이 vector의 음수는 가장 가파른 감소 방향 제시
 - 경사하강 방법
 
+![render](https://user-images.githubusercontent.com/80622859/189905670-3c58f6aa-b130-4db3-a957-36dd5995083c.png)
+
+- $\eta$ : 학습 속도라고 불리는 양의 상수, 경사하강 단계에서 크기를 결정
+- 가중치를 반복적으로 update하는 algorithm
+
+<img width="150" alt="캡처" src="https://user-images.githubusercontent.com/80622859/189905870-abf66f16-a2c0-48d8-b14a-d909ffb03e27.PNG">
+
+- $\eta$가 작으면 algorithm은 훈련 예제가 선형적으로 분리 가능한지 여부에 관계없이 최소 오류가 있는 가중치로 수렴.
+- $\eta$가 너무 크면 경사하강법은 오류 지표면에 도달하기 보다는 최소값을 통과할 가능성 존재. 이러하 이유로 경사하강법을 진행할수록 $\eta$의 값을 점진적으로 
+
+
 
 
 

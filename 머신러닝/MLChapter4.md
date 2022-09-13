@@ -92,9 +92,25 @@
 - $\eta$가 작으면 algorithm은 훈련 예제가 선형적으로 분리 가능한지 여부에 관계없이 최소 오류가 있는 가중치로 수렴.
 - $\eta$가 너무 크면 경사하강법은 오류 지표면에 도달하기 보다는 최소값을 통과할 가능성 존재. 이러하 이유로 경사하강법을 진행할수록 $\eta$의 값을 점진적으로 
 
+### 3.STOCHASTIC APPROXIMATION TO GRADIENT DESCENT
+- 경사하강법의 문제점
+1. Global minimum으로 수렴하는 것이 때때로 상당히 느릴 수 있음
+2. Local minimum이 여러 개 있는 경우 global minimum으로 도달하지 않을 수도 있음
+- 확률적 경사 하강법 사용
+- 기본 경사하강법은 D의 모든 훈련 예제를 합산한 후 가중치를 update
+- 확률적 경사 하강법은 각 개별 에제에 대한 오류 계산에 따라 가중치를 점진적으로 update
+- Random하게 추출한 일부 data를 사용(전체 data 사용 X)
+- 학습 중간 과정에서 결과의 진폭이 크고 불안정하며, 속도가 매우 빠름, memory 소모량 낮음
+- 지역 최솟값에 빠진다할지라도, 지역 최솟값에 쉽게 빠져나올 수 있음
 
+## 4. MULTILAYER NETWORKS AND THE BACKPROPAGATION ALGORITHM
+- 단일 퍼셉트론은 선형 결정 표면만을 표현 가능
+- MLP는 다양한 비선형 결정 표면을 표현 가능
 
+### 1. A Differentiable Threshold Unit
+- Sigmoid 단위 perceptron
 
+![render](https://user-images.githubusercontent.com/80622859/189907873-1b7b6f6d-42ee-49dc-be6a-15f0260aad1e.png)
 
 
 

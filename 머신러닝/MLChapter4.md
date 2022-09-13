@@ -112,5 +112,25 @@
 
 ![render](https://user-images.githubusercontent.com/80622859/189907873-1b7b6f6d-42ee-49dc-be6a-15f0260aad1e.png)
 
+- 출력 범위는 0과 1 사이로 입력과 함께 단조롭게 증가
+- 매우 큰 입력 domain을 작은 범위의 출력에 mapping하기 때문에 squashing function이라고도 함
+- Sigmoid 함수 대신 tanh 함수가 사용되기도 함
 
+### 2. The Backpropagation Algorithm
+- 역전파가 직면한 학습 문제는 network의 모든 unit에 대해 가능한 모든 가중치 값으로 정의된 큰 가설 공간을 검색하는 것
+- 다층 네트워크의 경우에는 단일 최소 포물선 오류 표면과 달리 여러 개의 지역 최소값을 가질 수 있음
 
+#### 역전파 1단계
+- 순전파가 입력층에서 출력층으로 향한다면 역전파는 반대로 출력층에서 입력층 방향으로 계산하면서 가중치 update
+- 출력층 바로 이전의 은닉층을 N층이라고 하였을 때, 출력층과 N층 사이의 가중치를 update하는 단계를 역전파 1단계, 그리고 N층과 N층의 이전층 사이의 가중치를 update하는 단계를 역전파 2단계
+
+<img width="116" alt="캡처" src="https://user-images.githubusercontent.com/80622859/189909303-2ba6b96b-b92a-4a88-a786-c5c0344a4db0.PNG">
+
+- Weights we have to update : $w_5\,,w_6\,,w_7\,,w_8$(4개)
+- For updatin $w_5$, we must calculate $\frac{\partial E_{total}}{\partial w_5}$
+- 미분의 연쇄법칙
+
+<img width="175" alt="캡처" src="https://user-images.githubusercontent.com/80622859/189910203-2bc0d63f-94c2-414e-baaa-62e542071121.PNG">
+
+- $E_{total}$ : 순전파를 진행하고 계산했던 전체 오차값
+- 

@@ -60,4 +60,13 @@
 - $x_2$ : 보드의 빨간색 조각 수
 - $x_3$ : the number of black kings on the board
 - $x_4$ : the number of red kings on the board
-- $x_5$ : 
+- $x_5$ : 빨간색으로 위협받는 검은색 조각의 수
+- $x_6$ : 검은색으로 위협받는 빨간색 조각의 수
+
+![render](https://user-images.githubusercontent.com/80622859/190848048-c2fbaba2-ebbb-4e6b-a791-6bd556a31fca.png)
+
+- $w_0 ~ w_6$ : Training algorithm에 의해 선택될 수치 계수 또는 가중치
+- $w_1 ~ w_6$까지의 학습된 값은 board의 값을 결정하는데 있어 다양한 보드 특징의 상대적 중요성을 결정하는 반면 $w_0$는 보드의 값에 추가 상수를 제공
+- 목표 함수 표현에서 계수에 대한 값 학습 문제로
+
+## Choosing a Function Approximation Algorithm

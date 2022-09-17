@@ -54,3 +54,10 @@
 - $\hat V$ : 실제로 학습한 함수, V : 이상적인 목표 함수
 
 ## Choosing a Representation for the Target Function
+- 주어진 보드 상태에 대해 함수 $\hat V$는 다음과 같은 보드 기능의 선형 조합으로 계산
+
+- $x_1$ : 보드의 검은색 조각 수
+- $x_2$ : 보드의 빨간색 조각 수
+- $x_3$ : the number of black kings on the board
+- $x_4$ : the number of red kings on the board
+- $x_5$ : 

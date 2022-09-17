@@ -59,8 +59,8 @@
 - ex) Sky의 속성은 3가지 값이라고 정의 => 유한한 가설 공간
 
 ### General-to-Specific ordering of hypotheses
-- $h_1 = <Sunny,?,?,Strong,?,?>$
-- $h_2 = <Sunny,?,?,?,?,?>$
+- $h_1$ = <Sunny,?,?,Strong,?,?>
+- $h_2$ = <Sunny,?,?,?,?,?>
 - $h_2$는 instance에 더 적은 제약을 부과하기 때문에 더 많은 instance를 긍정적으로 분류
 - $h_1$에 의해 긍정으로 분류된 사례들은 $h_2$에서도 긍정으로 분류
 - $h_2$가 $h_1$보다 일반적

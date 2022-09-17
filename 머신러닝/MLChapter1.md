@@ -35,5 +35,22 @@
 3. A learning mechanism
 
 ## Choosing the Target Function
- - 정확히 어떤 유형의 지식을 학습할 것인지, 그리고 이것이 수행 program에 어떻게 사용될 것인지 결정 
- - 
+- 정확히 어떤 유형의 지식을 학습할 것인지, 그리고 이것이 수행 program에 어떻게 사용될 것인지 결정 
+- Target function : V: B -> $\mathbb{R}$ 
+- V가 집합 B에서 어떤 실제 값으로 board 상태를 mapping
+- 목표 함수 V가 더 나은 board 상태에 더 높은 점수를 할당
+- System은 V를 학습 -> 현재 board 위치에서 최상의 이동을 선택
+- 임의의 board b에 대한 목표값 V(b)를 아래와 같이 정의
+
+1. 만약 b가 이긴 상태 -> V(b) = 100
+2. 만약 b가 진 상태 -> V(b) = -100
+3. 만약 b가 그려진 최종 상태 -> V(b) = 0
+4. 만약 b가 최종 상태가 아니라면 -> V(b) = V(b'). b'은 b에서 시작하여 게임이 끝날 때까지 최적으로 플레이할 수 있는 최고의 최종 board 상태
+
+- 게임이 끝난 상태가 아닌 V(b)(4번 경우) 값을 결정하려면 최적의 play line을 미리 탐색해야 함
+- 4번의 경우 게임이 끝날 때까지 효율적으로 계산되지 않기 때문에 비작동적(nonoperational) 정의라고 말함
+- 이 경우 학습의 목표는 V에 대한 작동 설명
+- 완벽한 V를 예상하기 어려움 -> 함수 근사치
+- $\hat V$ : 실제로 학습한 함수, V : 이상적인 목표 함수
+
+## Choosing a Representation for the Target Function

@@ -69,4 +69,46 @@
 - 때때로 역이 유용
 
 ## FIND-S: Finding a maximally specific hypothesis
--
+- H에서 가능한 가장 구체적인 가설로 시작하여 훈련 data를 잘 다루지 못할 때마다 가설을 일반화
+
+![캡처](https://user-images.githubusercontent.com/80622859/190855838-867706b8-8750-4242-8870-59e60a650e5d.PNG)
+
+![캡처](https://user-images.githubusercontent.com/80622859/190855843-5c62246e-8020-43cd-a6ab-933632bbd3c4.PNG)
+
+![캡처](https://user-images.githubusercontent.com/80622859/190855850-74dd7329-d43a-4248-876e-de51e1dd12af.PNG)
+
+- 주의 사항
+- 학습자가 올바른 target concept으로 수렴하였는가?
+- 왜 가장 구체적인 가설을 선호하는가?
+- 교육 예제가 일관성이 있는가?
+- 몇 가지 구체적인 일관된 가설이 있다면 어떤 것일까?
+
+## Version Spaces and the candidate-eliminational algorithm
+- FIND-S의 한계를 해결
+- FIND-S는 훈련 예제와 일치하는 H의 가설을 출력
+- Version space를 구하기 위한 algorithm
+- 가장 특수한 가설과 가장 일반적인 가설로부터 시작
+- FIND-S와 마찬가지로 instance를 하나씩 적용하여 두 가설 사이에 존재하는 후보 가설들을 줄여나감
+- Positive instance와 negative instance 2가지 모두 사용
+
+![캡처](https://user-images.githubusercontent.com/80622859/190856061-686c85e4-bf15-438d-a349-27aa53901276.PNG)
+
+- 새로 적용할 instance가 positive하면 이 instance를 만족시킬 수 있을만큼만 특수 경계인 S를 일반화해나감
+- 위의 과정에서 일반 경계인 G에 어긋나는 가설이 있을 경우 해당 조건을 제거
+- 반대로 새로 적용할 instance가 negative하면 이 instance가 negative로 분류될 수 있도록 일반 경계 G의 범위를 줄여나감
+- 위의 과정에서 S 쪽에 새로 적용되는 instance를 만족시키는 조건이 있다면 이 조건을 탈락 시킴
+
+![캡처](https://user-images.githubusercontent.com/80622859/190856146-13c87ead-40be-4183-815c-ae4e0323e525.PNG)
+
+- 첫 번째 instance를 적용 시 아래와 같이 변동
+
+![캡처](https://user-images.githubusercontent.com/80622859/190856170-d64d1da3-6d1a-4ae1-bf84-f1d503367c4b.PNG)
+
+- 첫 번째 label이 '예'이므로 이에 맞게 S를 조정하고 G는 거스르는 부분이 없으므로 그대로 유지
+- 두 번째 instance 적용
+
+![캡처](https://user-images.githubusercontent.com/80622859/190856212-7f2a95ac-92cd-4526-9079-74f1fef3b4cf.PNG)
+
+- 여기까지는 FIND-S와 동일(Yes만 나왔기 때문
+- 세 번째 instance 적용
+

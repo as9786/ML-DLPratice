@@ -112,3 +112,12 @@
 - 여기까지는 FIND-S와 동일(Yes만 나왔기 때문
 - 세 번째 instance 적용
 
+![캡처](https://user-images.githubusercontent.com/80622859/190856251-fb5fafef-994c-4727-adcc-3ce113e185d2.PNG)
+
+- 하늘, 온도, 일기 예보 세 가지 특성에서 다른 값을 나타냄
+- 마지막으로 네 번째 instance
+
+![캡처](https://user-images.githubusercontent.com/80622859/190856282-574db9f0-a008-4ad7-ba2f-ac3f89dabdac.PNG)
+
+- S쪽은 해수 온도와 일기 예보에서 기존 가설과 네 번째 instance 특성값이 다르므로 '?'로 처리
+- G쪽은 네 번째 instance에서 일기 예보의 특성값이 가변적임에도 label이 '예'dlamfh (?,?,?,?,?,일정함)에 해당하는 가설을 탈락시킴

@@ -7,7 +7,7 @@
 ## Introduction
 - 많은 학습은 특정 훈련 예시에서 일반적인 개념을 습득하는 것을 포함
 
-### Concept learning
+## Concept learning
 - 입력 및 출력의 예제에서 boolean 값 함수를 추론
 
 ## A concept learning task
@@ -34,3 +34,15 @@
 - Target concept : 학습해야할 개념 또는 함수, c
 - 일반적으로 c는 instance X에 대해 정의된 임의의 boolean 값 함수. 즉 c:X->{0,1}
 - EnjoySport = Yes -> c(x) = 1 <-> EnojoySport = No -> c(x) = 0
+
+- Target concept를 학습할 때 학습자는 c(x)와 함께 X의 instance x로 구성된 일련의 훈련 예제를 제시.
+- c(x) = 1인 경우 양의 예(positive example) 또는 memebers of the target concept
+- c(x) = 0인 경우 음의 예(negative example) 또는 nonmembers of the target concept
+- (x,c(x))로 작성, D : 사용 가능한 학습 data
+- c의 훈련 data가 주어지면, 학습자가 직면한 문제는 가설 또는 추정
+- H :  학습자가 target concept와 관련하여 고려할 수 있는 모든 가능한 가설의 집합
+- 일반적으로 H는 설계자의 가설 표현 선택에 의해 결정
+- H의 각 가설 h는 X에 대해 정의된 boolean 값 함수, 즉 h: X -> {0,1}을 나타냄
+- 목표는 X의 모든 x에 대해 h(x) = c(x)라는 가설을 찾는 것
+
+### The inductive learning hypothesis

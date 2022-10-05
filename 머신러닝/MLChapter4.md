@@ -144,6 +144,32 @@
             
             4. 가중치 update
             
+            
+          
+
+#### 역전파 수식
+
+<img width="114" alt="캡처" src="https://user-images.githubusercontent.com/80622859/194011011-6700d7a2-05bd-4446-87af-c188d5be0236.PNG">
+
+- 연쇄 법칙을 따르면 위의 식이 성립
+- 우변에 첫번째 항은 아래와 같음
+
+<img width="168" alt="캡처" src="https://user-images.githubusercontent.com/80622859/194011205-51869616-e3e8-41cd-9c6c-e137dd33a6ac.PNG">
+
+- Sigmoid의 미분값을 활용하여 2번쨰 항을 계산 시 아래와 같음
+
+<img width="118" alt="캡처" src="https://user-images.githubusercontent.com/80622859/194011379-a3957940-c1c9-4236-9276-0ea77b378719.PNG">
+
+- 위의 두 식을 곱하면 아래와 같음
+
+<img width="168" alt="캡처" src="https://user-images.githubusercontent.com/80622859/194011448-7f82835d-1d5f-4702-83b9-5c1c9b1afef2.PNG">
+
+- 최종 update 해야할 값은 아래와 같음
+
+<img width="244" alt="캡처" src="https://user-images.githubusercontent.com/80622859/194011526-88868eb3-24d9-4230-aac0-1442cb6bda84.PNG">
+
+
+
 
 
 #### 역전파 1단계

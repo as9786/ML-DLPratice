@@ -130,7 +130,7 @@
 <img width="116" alt="캡처" src="https://user-images.githubusercontent.com/80622859/189909303-2ba6b96b-b92a-4a88-a786-c5c0344a4db0.PNG">
 
 - Weights we have to update : $w_5\,,w_6\,,w_7\,,w_8$(4개)
-- For updatin $w_5$, we must calculate $\frac{\partial E_{total}}{\partial w_5}$
+- For updat $w_5$, we must calculate $\frac{\partial E_{total}}{\partial w_5}$
 - 미분의 연쇄법칙
 
 <img width="175" alt="캡처" src="https://user-images.githubusercontent.com/80622859/189910203-2bc0d63f-94c2-414e-baaa-62e542071121.PNG">

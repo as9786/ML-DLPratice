@@ -1,3 +1,43 @@
+# 조기 종료
+
+- 너무 많은 epoch은 과적합을 일으키고 너무 적은 epoch은 과소적합을 일으킴
+- 조기 종료 : 무조건 epoch을 많이 돌린 후, 특정 시점에서 멈추는 것
+- 일반적으로 hold-out validation set에서의 성능이 더 이상 증가하지 않을 때 학습을 중지
+
+## Early Stopping in Keras
+
+```{python}
+from keras.callbacks import EarlyStopping
+```
+
+- EalryStopping class의 구성 요소
+- Performance measure : 어떤 성능을 monitoring 할 것인가?
+- Trigger : 언제 학습을 멈출 것인가?
+
+### es = EarlyStopping(monitor='val_loss)
+- validation set의 손실을 관측
+
+### es = EarlyStopping(monitor='val_loss', mode = 'min')
+- default = auto
+- keras에서 알아서 min, max를 선택
+- 성능이 증가하지 않는다고, 그 순간 바로 멈추는 것은 효과적이지 않을 수 있음
+
+### es = EarlyStopping(monitor='val_loss', mode = 'min',verbose=1,patience=50)
+- verbose=1로 지정하면, 언제 keras에서 학습을 멈추었는지를 화면에 출력
+- patience : 성능이 증가하지 않는 epoch을 몇 번이나 허용할 것인가를 정의(주관적 기준)
+
+### es = EarlyStopping(monitor='val_loss', mode = 'min',baseline=0.4)
+- 특정값에 도달했을 때, 더 이상 학습이 필요하지 않는 경우
+
+- 최종적으로 model.fit 함수의 callback으로 조기 종료 객체를 넣어주면 조기 종료를 적용할 수 있음
+
+```{python}
+model.fit(x_train,y_train,epoch=10,batch_size=10,verbose=1,validation_split=0.2,callbacks=[early_stopping])
+```
+
+## pytorch
+
+
 ```{python}
 class EarlyStopping:
     """주어진 patience 이후로 validation loss가 개선되지 않으면 학습을 조기 중지"""

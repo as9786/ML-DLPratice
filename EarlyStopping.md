@@ -24,18 +24,21 @@ class EarlyStopping:
 
     def __call__(self, val_loss, model):
 
-        score = -val_loss
-
+        score = -val_loss #-를 곱해주었으므로 score가 높을 수록 좋은 모델
+        
+        # 초기 시작에는 best_score가 0이므로 들어온 val_loss를 지정 후 저장
         if self.best_score is None:
             self.best_score = score
             self.save_checkpoint(val_loss, model)
+            
+        # 들어온 score가 현재 성능이 가장 좋은 best_score+ delta보다 낮은 경우에는 모델을 갱신하지 않고 patience count에 1을 더해줌
         elif score < self.best_score + self.delta:
             self.counter += 1
             print(f'EarlyStopping counter: {self.counter} out of {self.patience}')
-            if self.counter >= self.patience:
+            if self.counter >= self.patience: # 목표 patience에 도달하면 더 이상 모델을 진행하지 않고 학습 끝
                 self.early_stop = True
         else:
-            self.best_score = score
+            self.best_score = score #이외에 경우에는 
             self.save_checkpoint(val_loss, model)
             self.counter = 0
 

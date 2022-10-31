@@ -32,7 +32,7 @@ from keras.callbacks import EarlyStopping
 - 최종적으로 model.fit 함수의 callback으로 조기 종료 객체를 넣어주면 조기 종료를 적용할 수 있음
 
 ```{python}
-model.fit(x_train,y_train,epoch=10,batch_size=10,verbose=1,validation_split=0.2,callbacks=[early_stopping])
+model.fit(x_train,y_train,epochs=10,batch_size=10,verbose=1,validation_split=0.2,callbacks=[early_stopping])
 ```
 
 ## pytorch

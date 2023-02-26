@@ -25,6 +25,8 @@
 
 # 합성곱 신경망의 심화
 - https://excelsior-cjh.tistory.com/180
+## GoogleNet
+- https://bskyvision.com/entry/CNN-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98%EB%93%A4-GoogLeNetinception-v1%EC%9D%98-%EA%B5%AC%EC%A1%B0
 # Batch Normalization
 - https://cvml.tistory.com/5
 - https://gaussian37.github.io/dl-concept-batchnorm/

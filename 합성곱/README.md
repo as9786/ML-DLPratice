@@ -9,3 +9,6 @@
 - https://medium.datadriveninvestor.com/understanding-edge-detection-sobel-operator-2aada303b900
 ## Gaussian filter
 - https://forums.ni.com/t5/Machine-Vision/gaussian-filter/td-p/2441104
+
+# 합성곱 계층
+- https://pradeeppant.com/2019/11/21/cnn-understanding-edge-detection-with-an-example.html

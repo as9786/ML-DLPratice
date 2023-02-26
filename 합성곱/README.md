@@ -25,3 +25,6 @@
 
 # 합성곱 신경망의 심화
 - https://excelsior-cjh.tistory.com/180
+# Batch Normalization
+- https://cvml.tistory.com/5
+- https://gaussian37.github.io/dl-concept-batchnorm/

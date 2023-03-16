@@ -20,3 +20,7 @@ https://www.notion.so/Parrot_study-cb22fcffd9514d66900f3b6b852ee823
 - https://discuss.pytorch.org/t/query-about-weight-decay/91247
 ### SSIM 
 - https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=y4769&logNo=220505513170
+
+## 데이터증강기법
+- https://hoya012.github.io/blog/Image-Data-Augmentation-Overview/
+- https://biii.eu/3d-affine-transformation-based-paired-points

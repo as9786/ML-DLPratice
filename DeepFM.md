@@ -55,5 +55,21 @@
 
 ## Deep FM
 
-- 
+![image](https://user-images.githubusercontent.com/80622859/227771707-6183f223-34a4-4184-8c5d-7c3e59581a11.png)
+
+- low-order feature interaction -> FM
+- High-order feature interaction -> DL
+
+### Input
+
+- FM and DL have the same embedding vector
+- Difference from Wide & Deep
+- 별도의 embedding layer를 훈련시켜 얻은 dense vector
+
+![image](https://user-images.githubusercontent.com/80622859/227771768-d3b23460-6955-4e1b-9846-11d429e0077c.png)
+
+- 각 신경망은 hidden vector의 차원이 k로 모두 동일
+- 이러한 훈련 과정에서 얻은 가중치 행렬의 각 행이 각 x의 embedding vector
+- Word2Vec과 유사
+- Ex) 연령이 [10대, 20대, 30대]
 

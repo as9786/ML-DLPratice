@@ -24,3 +24,6 @@ https://www.notion.so/Parrot_study-cb22fcffd9514d66900f3b6b852ee823
 ## 데이터증강기법
 - https://hoya012.github.io/blog/Image-Data-Augmentation-Overview/
 - https://biii.eu/3d-affine-transformation-based-paired-points
+
+## DeepFM
+- https://leehyejin91.github.io/post-deepfm/

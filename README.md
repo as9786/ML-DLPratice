@@ -27,3 +27,6 @@ https://www.notion.so/Parrot_study-cb22fcffd9514d66900f3b6b852ee823
 
 ## DeepFM
 - https://leehyejin91.github.io/post-deepfm/
+
+# Layer normalization
+- https://sonsnotation.blogspot.com/2020/11/8-normalization.html

@@ -50,3 +50,27 @@
 - 이동 평균에서는 최근 N개만 사용을 하기 때문에 지수 평균을 사용하는 경우도 있음 
 - 추론 단계에서는 정규화와 추가 scale, bias를 결합하여 단일 곱, 더하기 연산으로 줄임
 
+## 전결합 계층과 결합
+
+![image](https://user-images.githubusercontent.com/80622859/229456127-d6a2ed2d-1c8f-40df-8891-b27f90d7c075.png)
+
+- 전결합 계층의 편향이 batch norm의 편향과 역할이 겹치므로, 전결합 계층의 편향을 제거
+
+## 합성곱 계층의 batch normalization
+
+![image](https://user-images.githubusercontent.com/80622859/229456776-0b4178cf-616d-43db-a2db-1a3ed85edf70.png)
+
+- 전결합 계층은 각 node 별로 정규화
+- 합성곱 계층은 각 channel 별로 정규화
+- 배치, 높이, 너비에 대해 평균과 분산을 계산
+
+## 한계
+
+- Mini-batch에 의해 크게 영향을 받음
+- Batch의 크기가 너무 작으면 잘 작동하지 않음 => Sample 자체가 평균이 되어 버림
+- Memory의 한계로 RNN이나 크기가 큰 CNN에 적용하기 어려움
+- Batch의 크기가 너무 커도 잘 동작 X(Gaussian Mixture)
+- 병렬화 연산 효율이 떨어짐, 학습 속도 증가
+
+
+

@@ -40,4 +40,4 @@
 - Label = 0($y_{ij}=0$)인 경우에는 아래와 같이 식이 작성 됨
 - $max(0,\alpha - D^2_{ij})$  
 - $\alpha > D^2_{ij}$인 경우 $loss = \alpha-D^2_{ij}$ => 가중치 최신화
-- $\alpha \req D^2_{ij}$인 경우 $loss = 0$ => update X
+- $\alpha \leq D^2_{ij}$인 경우 $loss = 0$ => update X

@@ -4,3 +4,6 @@
 ## Contrasive loss
 - https://wikidocs.net/151187
 - https://iambeginnerdeveloper.tistory.com/198
+
+# Triplet Network
+- https://m.blog.naver.com/4u_olion/221478534498

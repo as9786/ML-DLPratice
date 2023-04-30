@@ -1,0 +1,19 @@
+# HDBSCAN
+
+## 1. Transform the space according to the density/sparsity
+- 거리를 robust하게 만듦
+- 계층적 군집화는 작은 거리에도 민감하게 반응. Noise로 생긴 거리로 인해 계층이 심하게 변동
+- Transformed distance metric
+
+![image](https://user-images.githubusercontent.com/80622859/235342223-ca6c12a2-2649-47be-8323-6aa6eb4a7d3c.png)
+
+- $core_k(a)$ : a의 k-th nearest neighbor까지의 거리
+- Mutual reachability
+- 두 점 a와 b의 거리를 잴 때
+1. a의 이웃과의 거리
+2. b의 이웃과의 거리
+3. a와 b 자체의 거리
+- 1,2,3 중 최대값을 고름
+- 밀도가 높은 지점은 core의 거리가 매우 작기에 d(a,b) 사용,  밀도가 낮은 지점의 경우에는 우연히 한 점이 바로 옆에 존재해도 core의 정보 사용
+- 거리의 robustness를 늘리고, 최종적으로 더 효율적인 군집화 가능
+- 

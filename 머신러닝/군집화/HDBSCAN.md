@@ -29,3 +29,48 @@
 
 ![image](https://user-images.githubusercontent.com/80622859/235342693-a786e97b-7d3e-43cd-9911-dc5954a44b83.png)
 
+## 3. Construct a cluster hierarchy of connected components
+- 점수를 낮추면서 하나씩 graph를 끊음. 0.9인 지점의 연결선을 끊고, 0.8인 연결선을 끊고...
+- 그 후, 만들어진 minimum spanning tree를 가장 가까운 거리부터 hierarchy clustering처럼 묶음
+- 가장 가까운 점 하나만 있으면 그것을 연결(Single linkage). 단순 거리가 아닌 mutual reachability를 사용했으므로 robust single linkage라고 함
+
+![image](https://user-images.githubusercontent.com/80622859/235342784-7a553e80-8c3c-41a6-b83f-57670d36d3c5.png)
+
+## 4. Condense the cluster hierarchy based on minimum cluster size
+- Threshold distane가 내려가면서 계층이 분할될 때, data가 1개, 2개 떨어져 나오는 경우 발생. 지저분 해짐
+- 위의 그림 기준으로는 거리가 0.4 이하로는 거의 다 data가 한 개가 떨어져 나옴
+- 이런 경우에는 2개의 군집이 나눠진 것으로 보지 않고, 한 개의 군집이 data를 잃은 것(fell out)이라고 정의
+- Noise로 처리
+- Minimum size(초매개변수) 지정
+- 최종적으로는 minimum size 이상의 크기를 가진 군집들이 남게 됨
+
+![image](https://user-images.githubusercontent.com/80622859/235342916-6af75535-c1bc-4dd7-89fd-7c1be44f919e.png)
+
+## 5. Extract the stable clusters from the condensed tree 
+
+- 위의 과정들은 단순히 noise를 제거. Local density 반영 X
+- Minimum size를 만족하기는 했지만, 마지막에 분할된 군집들이 존재
+- 이상적인 군집은 위의 그림에서 오랫동안 지속되었던 군집들
+- 이와 같은 직관을 수식으로 정의 -> HDBSCAN
+- 새로운 군집이 생기고(birth), 그 중 noise로 fell out 되는 data가 몇 개씩 존재하다가, 결국에는 minimum size 이상의 2개의 군집으로 분할(death)
+- 마지막에 분할이 안 되고 계속 지속되는 군집 존재. Noise로 fell out 되는 점들은 거리를 만족하지 못하고, minimum size를 만족하지 못하는 애들
+- 우리가 찾고 싶은 군집은 오래 살은 군집
+- $\lambda_{birth}$ : 군집의 탄생된 값, $\lambda_{death}$ : 한 군집이 두 개의 군집으로 분할되는 시점
+- 해당 군집 내의 각 점들은 fell out 되었다면 해당 시점이 존재하는 해당 시점을 $\lambda_p$로 표현
+- 끝까지 남아 있는 점들은 $\lambda_p = \lambda_{death}$
+- 군집 안정성(Cluster stability)
+
+![image](https://user-images.githubusercontent.com/80622859/235343120-6e2c21f0-8358-4f03-a6b6-1ea1b3211817.png)
+
+1. 이를 각각의 점에 대해서 모두 실행(부모, 자식 가릴 것 없이 아래에서 위로 올라가며 모두 실행)
+2. 아래에서 위로 올라가며 두 개의 자식 군집이 부모로 합쳐질 때마다, 그 부모의 안정성과 두 자식 군집의 안정성의 합을 비교
+3. 자식 군집의 안정성 합이 더 크면 2개의 자식을 군집으로 유지, 아닐 경우 부모를 군집으로 유지
+
+![image](https://user-images.githubusercontent.com/80622859/235343214-f0c9a53a-1439-424e-96c1-eb103f4586ae.png)
+
+### 결과물 및 각 data의 확률
+
+- $\lambda_p$, 군집에서 떨어져 나간 시점들을 모아, 각 군집 내에서 [0,1]에 오도록 scaling
+- 이 값이 큰 점들은 군집이 태어나자마자 fell out 된 애들이므로, 이를 해당 군집에 속할 확률으로 해석
+
+

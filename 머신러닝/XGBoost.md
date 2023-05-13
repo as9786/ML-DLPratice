@@ -33,4 +33,5 @@
 
 ### 2.2 Gradient Tree Boosting
 
+- 어떤 data로부터 분류 기능을 가장 잘 수행하는 tree를 찾는 문제는 NP-완전 문제. 가능한 모든 tree로부터 가장 좋은 tree를 찾는 것은 어려움
 - 

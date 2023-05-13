@@ -34,4 +34,12 @@
 ### 2.2 Gradient Tree Boosting
 
 - 어떤 data로부터 분류 기능을 가장 잘 수행하는 tree를 찾는 문제는 NP-완전 문제. 가능한 모든 tree로부터 가장 좋은 tree를 찾는 것은 어려움
+- 가장 좋은 tree를 찾기 위해서, 매 반복마다 tree에 가지(branch)를 하나씩 늘려나가는 방식(additive manner)을 제안
+
+![image](https://github.com/as9786/ML-DLPratice/assets/80622859/0dda60a1-875e-4d44-b477-811d4e8a623e)
+
+- $L^t$ : t 번째 반복에서 계산할 손실 함수
+- l : 임의의 손실 함수, $y_i$ : i번째 표본의 실제 값, $\hat y^{t-1)$ : t-1 번 째에서 나온 예측 값
+- $f_t(x_i)$ : t번 째 반복에서의 tree에 i번 째 data를 넣은 예측 값
+- 마지막 Constant는 t-1번 째까지의 정규화 부분의 합(상수)
 - 

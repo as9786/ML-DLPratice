@@ -42,4 +42,7 @@
 - l : 임의의 손실 함수, $y_i$ : i번째 표본의 실제 값, $\hat y^{t-1)$ : t-1 번 째에서 나온 예측 값
 - $f_t(x_i)$ : t번 째 반복에서의 tree에 i번 째 data를 넣은 예측 값
 - 마지막 Constant는 t-1번 째까지의 정규화 부분의 합(상수)
+- 위의 식이 왜 XGBoost가 GBM 모형인지를 알려줌
+- GBM은 ensemble 진행하는 과정에서 이전 iteration에서 잘 학습하지 못한 부분에 가중치를 두고 학습하는 방식
+- 위의 식을 손실 함수 하에서 최적화하기 좋은 형태로 만들기 위해 Taylor expansion을 통한 2차 근사(second-order approximation)
 - 

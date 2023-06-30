@@ -4,6 +4,7 @@ https://www.notion.so/Parrot_study-cb22fcffd9514d66900f3b6b852ee823
 ## 과적합
 - https://ko.wikipedia.org/wiki/%EA%B3%BC%EC%A0%81%ED%95%A9
 - https://kau-deeperent.tistory.com/101
+- http://www.ssacstat.com/base/cs/cs_05.php?com_board_basic=read_form&com_board_idx=710&topmenu=5&left=5&&com_board_search_code=&com_board_search_value1=&com_board_search_value2=&com_board_page=19&
 ### Dropout
 - https://kh-kim.github.io/nlp_with_deep_learning_blog/docs/1-14-regularizations/04-dropout/
 ### 배치 정규화

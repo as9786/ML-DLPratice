@@ -34,3 +34,6 @@ https://www.notion.so/Parrot_study-cb22fcffd9514d66900f3b6b852ee823
 
 # LOF 
 - https://godongyoung.github.io/%EB%A8%B8%EC%8B%A0%EB%9F%AC%EB%8B%9D/2019/03/11/Local-Outlier-Factor(LOF).html
+
+# TimeGAN
+- https://rlawjdghek.github.io/paper%20&%20knowledge/TimeGAN/

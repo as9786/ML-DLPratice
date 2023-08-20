@@ -59,3 +59,11 @@
 
 ![image](https://github.com/as9786/ML-DLPratice/assets/80622859/06793cb2-dd55-47c1-bd41-4deeaf3958cc)
 
+![image](https://github.com/as9786/ML-DLPratice/assets/80622859/992c7771-e5a9-442e-89dc-14cf90c174c8)
+
+- 총 5가지로 학습
+1. Auto encoder
+2. Supervisor
+3. Generator
+4. Autoencoder
+5. Discriminator

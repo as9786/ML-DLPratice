@@ -52,4 +52,96 @@
 - Decoder는 해당 입력을 받아 encoder로부터 생성된 concatenated feature map과 encoder-decoder attention을 수행하여 주황색 부분의 출력을 예측
 
 ### 1. Efficient Self-attention Mechanism
+- Canonical self-attention : 기존의 transformer model이 사용하고 있는 전형적인 self-attention
+- Transformer의 scaled dot-product attention
+- 
+![image](https://github.com/as9786/ML-DLPratice/assets/80622859/bf6e46f5-d71f-4e15-a0a0-8bda9015f3dc)
+
+- Q, K, V의 i 번째 row vector를 의미하는 $q_i, k_i, v_i$는 i 번째 query에 대한 attention은 kernel smoother를 활용하여 다음과 같이 수식이 정의될 수 있음(Kernel smoother는 query와 key의 내적을 근사하는 함수)
+
+![image](https://github.com/as9786/ML-DLPratice/assets/80622859/d0ffdd5a-5328-45c2-962c-fb648d0178cd)
+
+- $k(q_i,k_j) : Asymmetric exponential kernel, $\exp(q_i k^T_j / \sqrt{d_k})$를 사용
+- Self-attention은 value와 $p(k_j|q_i)$ 확률을 결합하여 출력을 얻음
+- 이 과정은 quaratic한 횟수의 dot-product 연산과 $O(L_QL_K)$만큼의 memory usage
+- 예측 능력을 향상시키는 데에 주요 한계점
+- Self-attention의 확률분포가 희소함
+- 이는 대부분의 attention score 값이 대부분 낮다는 것을 의미
+- $p(k_j|q_i)$들 중에서 성능에 유의미한 영향을 끼치지 않는 것을 제외하는 selective counting strategies 고안
+- 하지만 위의 방법은 heuristic하고, 각 multi-head self-attention을 동일한 전략으로 다루고 있기에 이론적 한계가 있음
+- Query나 key를 지정할 때, 임의로 진행하게 됨
+- 본 논문은 위의 문제를 해결하기 위해 새로운 접근 방식 제안
+- Sparse self-attention은 꼬리가 긴 분포를 가짐
+
+![image](https://github.com/as9786/ML-DLPratice/assets/80622859/d06d5635-548f-404e-93d7-b0e411e3fe4a)
+
+- 이는 소수의 dot-product pairs만이 attention에서 주요한 역할을 함. 다른 dot-product pairs는 trivial attention(영향력이 낮음)
+
+#### 1-1 Query Sparsity Measurement
+- Dominant dot-product pairs(유의미한 query-key pairs)의 분포는 균등 분포로부터 상이
+- 분포의 유사도는 중요한 query를 구분해내는 지표로 사용될 수 있음
+- Kullback-Leibler divergence 사용
+
+![image](https://github.com/as9786/ML-DLPratice/assets/80622859/1518d67b-80ed-45a8-aacd-e36123064f09)
+
+- 마지막 상수항을 제거하고 i 번째 query에 대한 희소성 측정 방법을 아래와 같이 정의(Simpler Kullback-Leibler divergence)
+
+![image](https://github.com/as9786/ML-DLPratice/assets/80622859/6a80dc5f-8bca-4251-ad31-0133341ca09a)
+
+- 첫 번째 항 : 모든 key에 대한 Log-Sum-Exp(LSE) 값을 의미. 두 번째 항 : $q_i$의 모든 key에 대한 산술평균
+- 만약에 i 번째 query가 위의 식에서 큰 값을 가지게 되면, 그 attention probability p는 보다 다양한 확률 값을 가지게 될 것이고, 유의미한 dot-product pairs를 가질 가능성이 더 높음
+- 긴 꼬리분포에서 header 부분에 해당하는 pair가 중요
+
+#### 1-2. ProbSparse Self-attention
+
+![image](https://github.com/as9786/ML-DLPratice/assets/80622859/c9079c94-a9d4-414d-b990-8d60a9108dba)
+
+- $\bar{Q}$ : 같은 크기의 q로 구성된 sparse matrix. M(q,K)를 기준으로 하여 Top-u개의 query만으로 구성
+- $u = c \cdot \ln L_Q$, c : sampling factor(초매개변수)
+- Multi-head에서 각 head 별로 다른 sparse query-key 쌍을 생성 => 표본 추출로 인한 심각한 정보 손실 방지
+- 하지만 이 방법도 quadratic operation => Empirical approximation
+- 실제 query sparsity 측정값인 M(q,K) 값의 범위를 제한
+
+![image](https://github.com/as9786/ML-DLPratice/assets/80622859/ad4f7965-3cca-4198-96ee-ee344752660b)
+
+- 위의 보조정리를 활용하여 아래의 근사식 도출
+
+![image](https://github.com/as9786/ML-DLPratice/assets/80622859/cf4a6be6-6a2d-4feb-905a-e8a0773273b2)
+
+
+### 2. Encoder: Allowing for Processing Longer Sequential Inputs under the Memory Usage Limitation
+
+![image](https://github.com/as9786/ML-DLPratice/assets/80622859/3cc4ae5c-81e7-4196-b52b-0792bd2d53ea)
+
+- raw data의 상수 값은 conv1d를 통해 projection. Global/Local 시간 정보인 stamp 값은 각각 positional embedding을 통해 embedding
+- 두 개의 embedding matrix는 더해져 최종적으로 encoder embedding
+
+#### 2-1. Self-attention Distilling
+- Conv1d와 max pooling을 사용하여 self-attention distilling을 수행
+- j 번째 층에서 (j+1) 번째 층으로 증류되는 과정은 아래와 같음
+
+![image](https://github.com/as9786/ML-DLPratice/assets/80622859/462a2d50-d0bb-487a-8185-b3e74391b8ff)
+
+- AB : Attention Block, kernel-size = 3, stride = 2
+- Memory 사용량인 감소되는 효과
+- 강건성 향상을 위해 원래 입력의 절반 길이만큼만 입력으로 받는 복제된 encoder 구성
+
+![image](https://github.com/as9786/ML-DLPratice/assets/80622859/49a06164-2151-40a3-b09b-3b128f95f346)
+
+## 3. Decoder: Generating Long Sequential Outputs Through One Forward Procedure
+
+- Generative inference
+- Decoder input
+  
+![image](https://github.com/as9786/ML-DLPratice/assets/80622859/cc878606-d662-4b94-af74-b15d42f3c919)
+
+- $X^t_{token}$ : Start token, $X^t_0$ : Placeholder(target sequence, 0으로 설정)
+- Placeholder 부분의 input embedding으로는 시간 정보만 반영
+- Masked multi-head attention이 ProbSparse self-attention 계산에 사용
+
+ ### 3-1 Generative Inference
+ - Step-by-step inference가 아닌 한 번에 생성이 가능한 decoding
+
+### 3-2 Loss function
+- MSE loss
 

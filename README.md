@@ -40,3 +40,4 @@ https://www.notion.so/Parrot_study-cb22fcffd9514d66900f3b6b852ee823
 
 # Informer 
 - https://velog.io/@suubkiim/Paper-Review-Informer-Beyond-Efficient-Transformer-for-Long-SequenceTime-Series-Forecasting
+- https://medium.com/@funcry/in-depth-understanding-of-attention-mechanism-part-ii-scaled-dot-product-attention-and-its-7743804e610e

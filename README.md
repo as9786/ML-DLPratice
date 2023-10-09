@@ -37,3 +37,6 @@ https://www.notion.so/Parrot_study-cb22fcffd9514d66900f3b6b852ee823
 
 # TimeGAN
 - https://rlawjdghek.github.io/paper%20&%20knowledge/TimeGAN/
+
+# Informer 
+- https://velog.io/@suubkiim/Paper-Review-Informer-Beyond-Efficient-Transformer-for-Long-SequenceTime-Series-Forecasting

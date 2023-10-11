@@ -12,7 +12,7 @@
 ### Process of Planning
 
 #### 예측
-- 입력 : $MDP <S,A,P,R,\gamma>$ 그리고 정책($\pi$)
+- 입력 $MDP <S,A,P,R,\gamma>$ 그리고 정책($\pi$)
 - 또는 $MRP < S, P^{\pi}, R^{\pi}, \gamma>$
 - 출력 : 가치 함수
 

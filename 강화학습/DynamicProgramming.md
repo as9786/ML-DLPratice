@@ -32,7 +32,7 @@
 1. 정책을 임의로 초기화
 2. 아래 조건이 될 때까지 반복
 - $V=V_{\pi}$라고 할 때,
-- For each state s, let $\pi(s) = arg\,max_{a\inA}\gamma\sum_{s'\in S}P_{sa}(s')V^*(s')$
+- For each state s, let $\pi(s) = arg max_{a \in A}\gamma\sum_{s'\in S}P_{sa}(s')V^*(s')$
 - 가치 함수에 대해 탐욕적인 정책 최신화 방법이라고 부름
 - 정책 반복 역시 poliynomial time 안에 최적의 정책으로 수렴하게 됨
 

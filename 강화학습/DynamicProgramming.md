@@ -17,7 +17,7 @@
 - 출력 : 가치 함수
 
 #### For control
-- 입력 : MDP <S,A,P,R,$\gamma$>
+- 입력 : MDP <S,A,P,R,$\gamma$ >
 - 출력  최적의 가치 함수와 최적의 정책
 
 ## Dynamic Programming 조건

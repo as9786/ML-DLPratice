@@ -35,4 +35,12 @@
 - 가치 함수에 대해 탐욕적인 정책 최신화 방법이라고 부름
 - 정책 반복 역시 poliynomial time 안에 최적의 정책으로 수렴하게 됨
 
+### Policy evaluation
+- $v_{\pi}$를 추정
+- 반복적으로 정책 평가
+
+### Policy improvement
+- $\pi' \geq \pi$를 생성
+- 탐욕적인 정책 향상
+
 

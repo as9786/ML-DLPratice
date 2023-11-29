@@ -44,3 +44,7 @@ https://www.notion.so/Parrot_study-cb22fcffd9514d66900f3b6b852ee823
 
 # SHAP
 - https://datanetworkanalysis.github.io/2019/12/23/shap1
+
+# EM
+- https://primestory.tistory.com/9
+- https://oopapa.tistory.com/485

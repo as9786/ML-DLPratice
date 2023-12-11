@@ -18,6 +18,8 @@ https://www.notion.so/Parrot_study-cb22fcffd9514d66900f3b6b852ee823
 
 ## 추가 손실 함수
 ### 가중치 감쇠
+
+
 - https://discuss.pytorch.org/t/query-about-weight-decay/91247
 ### SSIM 
 - https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=y4769&logNo=220505513170
@@ -51,3 +53,6 @@ https://www.notion.so/Parrot_study-cb22fcffd9514d66900f3b6b852ee823
 
 # SNE
 - https://dowhati1.tistory.com/11
+
+# t-SNE
+- https://gaussian37.github.io/ml-concept-t_sne/

@@ -21,3 +21,31 @@
 - 위의 수식을 dissimilarities라고 부름
 - 분산을 $x_i$ 주변의 이웃인 k개만 가지고 구함
 - 해당 k를 perplexity라고 함
+- k개만을 통해 분산을 구하게 되면 위의 i와 j의 순서가 바뀌면 다른 값이 됨
+- 정규분포를 활용하면 $x_i$와 $x_j$의 거리를 확률로 나타낼 수 있고, $x_i$의 이웃 중에서 $x_j$를 선택할 확률은 다음과 같음
+- $$p_i = \frac{e^{-d_{i,j}^2}{\sum_{k \neq i} e^{-d_{i,k}^2}
+
+## 고차원 확률분포와 저차원 확률 분포 차이
+- 고차원 data 사이의 선택 확률은 위의 수식으로 정의. 저차원 data $y_i$ 사이의 선택 확률도 동일하게 정의 가능
+- 편의상 분산을 1/2로 가정(고차원에서 저차원을 구하려고 하는 것이기 때문)
+
+![image](https://github.com/as9786/ML-DLPratice/assets/80622859/fb43b8f0-54c1-4872-8f1c-cb22c8e14a10)
+
+- 위에서 정의한 확률 분포들이 가장 유사하게 $y_i$를 찾는 것이 목표
+- 확률분포 사이의 차이를 나타내는 KLD 사용
+- 임의의 $x_i$에 대한 비용 함수를 아래와 같이 정의
+
+![image](https://github.com/as9786/ML-DLPratice/assets/80622859/b7fbf944-2f3c-419e-b8e0-8c2ad66627bf)
+
+- 모든 $x_i$에 대한 비용 함수는 아래와 같음
+
+![image](https://github.com/as9786/ML-DLPratice/assets/80622859/845079eb-a342-43cf-9c61-865062fc2749)
+
+- 비용 함수를 최소화하는 $y_i$를 찾는 것
+
+![image](https://github.com/as9786/ML-DLPratice/assets/80622859/942f2ff3-bb26-47db-8758-1fdc7e226235)
+
+- 정규분포 대신에t 분포를 활용하는 것이 t-SNE
+
+
+

@@ -48,3 +48,6 @@ https://www.notion.so/Parrot_study-cb22fcffd9514d66900f3b6b852ee823
 # EM
 - https://primestory.tistory.com/9
 - https://oopapa.tistory.com/485
+
+# SNE
+- https://dowhati1.tistory.com/11

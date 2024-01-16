@@ -43,5 +43,10 @@
 
 - 해당 행렬은 모든 원소의 값이 0 이상
 - 0의 값을 가지는 학생-projet 쌍만 가지고 모든 학생을 서로 다른 작업에 할당하면, 이는 가장 적은 비용이 발생
-- 하지만 위의 행렬의 경우 그럴 수 없음
+- 하지만 위의 행렬의 경우 그럴 수 없음(쾨니그의 정리)
+
+![image](https://github.com/as9786/ML-DLPratice/assets/80622859/5d886e0c-c832-4304-a6ca-56fe8cd9dec1)
+
+- 쾨니그의 정리에 의해 graph에서 maximum-size matching은 minimum-size vertex cover와 동일
+- 위의 graph에서는 vertax cover의 크기가 2인 경우 존재
 - 

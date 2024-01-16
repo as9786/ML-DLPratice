@@ -56,3 +56,6 @@ https://www.notion.so/Parrot_study-cb22fcffd9514d66900f3b6b852ee823
 
 # t-SNE
 - https://gaussian37.github.io/ml-concept-t_sne/
+
+# Hungrarian 
+- https://gazelle-and-cs.tistory.com/29

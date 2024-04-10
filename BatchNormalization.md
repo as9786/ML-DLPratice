@@ -28,6 +28,11 @@
 
 - 학습 과정에서 각 batch별로 평균과 분산을 이용해 정규화하는 계층
 
+### 장점
+1. 학습 속도를 빠르게 함
+2. 가중치 초기화에 대한 민감도 감소
+3. 모형의 일반화 효과
+
 ### 학습 단계(Training phase)
 
 ![image](https://user-images.githubusercontent.com/80622859/221401972-a9179d51-ffa2-4f8b-83a3-7c9efec4b14f.png)

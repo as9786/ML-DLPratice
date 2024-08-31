@@ -47,4 +47,50 @@
 - Fourier series에 vector의 축 개념과 유사하게 적용 가능
 - 다양한 주파수를 가진 단순하 주기함수(축) 간의 직교성을 증명하면 그들을 조합하여 모든 주기 함수를 나타낼 수 있음
 
-### 
+### 복소 함수의 내적
+- 함수의 직교성 또한 vector orthogonality와 유사
+- 함수의 내적 결과가 0일 경우 직교성을 가지고 있음
+- Vector와 다른 부분은 함수는 연속적이기 때문에 함수 곱을 적분해주어야 함(Vector는 곱의 합을 사용)
+- 함수에서는 서로 직교할 수 있는 함수가 무한개가 존재하며, 직교하는 함수 집합을 orthogonal set이라고 함
+- 구간 [a,b]에서 $f_n (t)=$Orthogonal Set이라면, 임의 함수 $f(t)=\sum_{n=-\infty}^{\infty} c_n f_n (t)$로 표현 할 수 있음
+- 이를 fourier series에 적용
+
+![image](https://github.com/user-attachments/assets/d92fc8a3-a165-4bce-94af-8b0a0d263a38)
+
+- 구간 [0,T]에서 서로 다른 정수배 n=p,q에 대하여 $e^{j\frac{2\pi n}{T}t}$가 서로 직교하는지를 증명
+
+![image](https://github.com/user-attachments/assets/6bf7943d-c253-4532-a3d3-d4f103798dcd)
+
+- 복소함수를 내적하려면 켤레 복소 함수를 이용해야 함으로 j앞에 음수를 붙여야 함
+- p와 q는 정수이며, 각 주기함수는 다른 주기성을 가짐
+
+![image](https://github.com/user-attachments/assets/34f7c1ac-0111-4e49-aec7-6489e2d70e38)
+
+- $exp(j2\pi (p-q)t)$ 함수의 주기성은 항상 $2\pi$이기 때문에 결과값은 항상 1이 나옴(복소평면에서 euler's rule을 적용)
+- 그 결과, $exp(j2\pi (p-q)t)-1=0$이 되어 모든 t에 대해 0이 됨
+- 서로 다른 주기성의 정현파로 이루어진 복소 함수들을 서로 직교
+
+## 2-4. Fourier coefficient
+- 계수를 찾기 위해서는 앞서 증명한 직교성을 활용
+- 내적의 개념을 활용
+
+![image](https://github.com/user-attachments/assets/1468ec23-0f19-4f87-bdf4-4bd25129cc7d)
+
+- 내적할 때처럼 f(t)에 $exp(-j\frac{2\pi q}{T}t)$를 곱한 뒤에 f(t)의 시간 주기인 [0,T] 범위에서 적분
+
+![image](https://github.com/user-attachments/assets/0a5e107e-8331-4b35-b541-19e24610c882)
+
+- 적분과 sigma의 자리를 바꿈
+- 적분은 t에 대해서만 하기 때문에 $C_n$은 이와 관련없음으로 앞으로 빼냄
+- 적분 부분은 앞의 내적 증명 수식과 동일. 즉, n=p(q와 다른 수)이면 전체 적분이 0이 되어 수식 또한 0의 값을 가짐
+- 만약, n=q이면 적분부분이 $\int_{0}^{T} 1dt=T$가 됨
+- n=q일 때만 값이 살아남음
+
+![image](https://github.com/user-attachments/assets/7ede2716-1e91-47cf-99ec-66aa8ac5f57a)
+
+# 정리
+- Fourier series는 주기성을 가진 주기 함수의 근사만 가능
+
+
+
+

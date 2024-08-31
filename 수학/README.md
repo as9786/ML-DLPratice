@@ -10,3 +10,6 @@
 
 # 역 삼각함수
 - https://sseong40.tistory.com/26
+
+# Euler formula
+- https://gaussian37.github.io/math-calculus-euler_formula/

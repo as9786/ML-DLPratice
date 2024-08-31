@@ -7,3 +7,6 @@
 
 # 극 좌표계
 - https://gaussian37.github.io/math-calculus-polar_coordinate_system/
+
+# 역 삼각함수
+- https://sseong40.tistory.com/26

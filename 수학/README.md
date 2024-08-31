@@ -4,3 +4,6 @@
 
 # Fourier Series
 - https://supermemi.tistory.com/95
+
+# 극 좌표계
+- https://gaussian37.github.io/math-calculus-polar_coordinate_system/

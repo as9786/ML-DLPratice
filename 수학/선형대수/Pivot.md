@@ -39,3 +39,37 @@
 
 ## $Pivot \neq 0$
 ### 1. 해가 존재하지 않는 경우(불능) 
+
+![image](https://github.com/user-attachments/assets/1cdb9a71-1b31-4f10-b8e0-541b0a586c72)
+
+- 두 직선은 평행하지만 y 절편이 다름
+- 소거법 적용 시, 아래와 같음
+
+![image](https://github.com/user-attachments/assets/cc45df3c-e7ae-4761-bb5e-200164dea2c9)
+
+- 위를 만족하는 해는 존재하지 않으며, 0은 pivot이 될 수 없으므로 pivot은 한 개만 존재
+
+### 2. 무수히 많은 해를 가지는 경우(부정)
+
+![image](https://github.com/user-attachments/assets/28001177-c0d3-4fd6-a885-d83e226dce12)
+
+![image](https://github.com/user-attachments/assets/75be5f19-ef88-4e98-940e-629a9e7b31f9)
+
+- 해당 경우에도 하나의 pivot 값을 가짐
+
+## 여러 사각행렬에 대한 pivot
+
+- 정사각행렬이 아니라는 이야기는 방정식의 개수(행의 개수)가 미지수의 개수(열의 개수)보다 작은 경우 또는 반대의 경우
+1. Row vector, column vector의 경우, 첫 성분이 pivot
+    - A=(3 4 2) => pivot = 3
+2. 성분이 1개 뿐인 행렬은 해당 성분이 pivot
+3. m x n 행렬의 경우, 최대 n개의 pivot을 가질 수 있음. Pivot을 구하기 위해서는 행사다리꼴 형태로 바꾸는 소거법 사용.
+
+![image](https://github.com/user-attachments/assets/0a681092-92e6-45ba-9eb9-0351deb9a91d)
+
+  
+
+
+
+
+

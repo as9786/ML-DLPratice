@@ -20,3 +20,11 @@
 3. 2의 g에서 각 (2+3을 합쳐서 HiPPO라고 함)
 4. 시간변화율에 따른 continous-time HiPPO ODE(Ordinary Dynamic Equation) 정의(HiPPO ODE에서 f는 t 시점까지의 f 함수)
 5. 현재 공간은 이산적이므로, 이를 회귀 문제로 재정의. 
+
+- 시간 함수 f(t)를 투영(projection)시키고, 계수 행렬(coeff)로 사상해서 c(t)를 찾는게 HiPPO framework
+
+### High Order Projection: Measure Families and HiPPO ODEs
+
+1. translated Legendre(LegT)
+
+2. 

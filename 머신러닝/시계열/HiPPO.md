@@ -18,4 +18,5 @@
 1. 시간에 따라 변하는 함수 f를 정의
 2. 각 시간($t_0, t_1...T$)에 따라 최적으로 투영되는 다항 함수 g(t)가 존재
 3. 2의 g에서 각 (2+3을 합쳐서 HiPPO라고 함)
-4. 
+4. 시간변화율에 따른 continous-time HiPPO ODE(Ordinary Dynamic Equation) 정의(HiPPO ODE에서 f는 t 시점까지의 f 함수)
+5. 현재 공간은 이산적이므로, 이를 회귀 문제로 재정의. 

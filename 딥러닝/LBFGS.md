@@ -7,7 +7,11 @@
 - 가장 최근의 반복들에서의 curvature information을 이용
 
 ## BFGS 
+- quasi-Newton algorithm. Computer memory의 제한된 양만을 사용
+- 사람 이름의 앞 글자들만 합쳐 놓은 것 
 
 <img width="1107" height="53" alt="image" src="https://github.com/user-attachments/assets/58aad888-6354-41af-9dee-8ef0ba01e6bc" />
 
-
+- BFGS 목적은 f(x)를 제한 조건이 없는 실수 vector x에 대해서 최소화 시키는 것.(f(x)는 scalar function)
+- Scalar function : 결과 또는 출력이 단일 값인 함수
+- 

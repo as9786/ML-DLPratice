@@ -14,4 +14,8 @@
 
 - BFGS 목적은 f(x)를 제한 조건이 없는 실수 vector x에 대해서 최소화 시키는 것.(f(x)는 scalar function)
 - Scalar function : 결과 또는 출력이 단일 값인 함수
-- 
+- 이차 도함수를 직접 계산하지 않고, 매 반복마다 근사해서 parameter를 최신화하는 방법
+
+### 과정
+1. 현재 위치 $x_k$에서의 경사 계싼 : $g_k=\bigtriangledownf(x_k)$
+2. 

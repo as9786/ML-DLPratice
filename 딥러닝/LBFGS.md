@@ -17,5 +17,5 @@
 - 이차 도함수를 직접 계산하지 않고, 매 반복마다 근사해서 parameter를 최신화하는 방법
 
 ### 과정
-1. 현재 위치 $x_k$에서의 경사 계싼 : $g_k=\bigtriangledownf(x_k)$
+1. 현재 위치 $x_k$에서의 경사 계싼 : $g_k=\bigtriangledown f(x_k)$
 2. 

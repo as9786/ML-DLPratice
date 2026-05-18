@@ -12,7 +12,7 @@
 - 재귀 구조
 
 # Bellman optimality equation
-- $V^{*} (s) = max_a E[r + \gamma V^* (s')]$
+- $V^* (s) = max_a E[r + \gamma V^* (s')]$
 - $max_a$ : 가능한 행동 중 가장 좋은 행동 선택
 - 실제로는 상태만 보는 것이 아닌 상태 + 행동의 가치를 사용(Q-Function, Q(s,a))
 ## Bellman equation for Q

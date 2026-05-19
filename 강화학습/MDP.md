@@ -19,4 +19,6 @@
 - $v(s)=E[G_t|S_t=s]$
 - 목표를 달성하는데 있어 상태가 얼마나 좋은지를 나타냄
 - 해당 함수는 재귀 형태로 표현 가능(Bellman equation)
-- 
+- $v(s) = E[R_{t+1} + \gamma R_{t+2} + \gamma&2 R_{t+3} + ...|S_t=s] = E[R_{t+1} + \gamma v(S_{t+1})|S_t=s]$
+- $v(s) = R_{t+1} + \gamma \sum_{s' \in S} p(s'|s)v(s')$
+- $v = r + \gamma Pv \Leftrightarrow (I- \gamma P)v=r \Leftrightarrow v=(I-\gamma P)^{-1} r$ 

@@ -22,3 +22,17 @@
 - $v(s) = E[R_{t+1} + \gamma R_{t+2} + \gamma^2 R_{t+3} + ...|S_t=s] = E[R_{t+1} + \gamma v(S_{t+1})|S_t=s]$
 - $v(s) = R_{t+1} + \gamma \sum_{s' \in S} p(s'|s)v(s')$
 - $v = r + \gamma Pv \Leftrightarrow (I- \gamma P)v=r \Leftrightarrow v=(I-\gamma P)^{-1} r$ 
+
+## 2. MDP
+- Markov reward process에 행동이라는 요소 추가. $<S, A, P, R, \gamma>$
+- 각 상태마다 전체적인 보상을 최대화하는 행동이 무엇인지를 결정
+- 정책, $\pi$ : 각각의 상태마다 행동의 분포를 표현하는 함수. $\pi(a|s)=Pr(A_t = a|S_t = s)$
+- MDP가 주어진 정책을 따를 때, 상태 변화식
+- $p_{\pi} (s'|s) = \sum_{a \in A} \pi (a|s)p (s'|s,a)$
+- 이에 따른 보상식
+- $r_{\pi} (s) = \sum_{a \in A} \pi (a|s) r(s,a)$
+
+### State-Value function with policy
+- 특정 상태에서 시작했을 때 얻을 수 있는 보상의 기댓값
+- $v_{\pi} (s) = E_{\pi} [G_t|S_t=s] = E_{\pi} [R_{t+1} + \gamma v_{\pi} S_{t+1} |S_t=s]=\sum_{a \in A} \pi (a|s) (r(s,a) + \gamma \sum_{s' \in S} p(s'|s,a)v_{\pi} (s'))$
+- 

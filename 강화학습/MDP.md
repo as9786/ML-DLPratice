@@ -35,4 +35,9 @@
 ### State-Value function with policy
 - 특정 상태에서 시작했을 때 얻을 수 있는 보상의 기댓값
 - $v_{\pi} (s) = E_{\pi} [G_t|S_t=s] = E_{\pi} [R_{t+1} + \gamma v_{\pi} S_{t+1} |S_t=s]=\sum_{a \in A} \pi (a|s) (r(s,a) + \gamma \sum_{s' \in S} p(s'|s,a)v_{\pi} (s'))$
+
+### 행동-가치 함수
+- 상태 s에서 시작하여 행동을 취했을 때 얻을 수 있는 보상의 기댓값
+- $q_{\pi} (s,a) = E_{\pi} [G_t|S_t=s, A_t=a]=E_{\pi} [R_{t+1} + \gamma q_{\pi} (S_{t+1}, A_{t+1}) | S_t=s]=r(s,a)+ \gamma \sum_{s' \in S} p(s'|s,a) \sum_{a' \in A} \pi (a'|s') q_{\pi} (a'|s')$
+- 상태-가치 함수는 어떠한 상태가 더 많은 보상을 얻을 수 있는지를 알려줌. 행동-가치 함수는 어떠한 상태에서 어떠한 행동을 취해야 더 많은 보상을 얻을 수 있는지 알려줌
 - 

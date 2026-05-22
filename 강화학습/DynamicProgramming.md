@@ -45,6 +45,12 @@
 - 탐욕적인 정책 향상
 
 ## Value iteration
-1. 모든 s에 대해서 V(s)=0으로 초기화
-2. 
+- Unlike policy iteration, this method updates the value function in the direction of maximizing it by using the Bellman optimality equation, which is independent of the current policy
+- 정책 반복에서는 모든 행동에 대한 보상 값으로 정책의 확률 분포에 따른 기댓값 계산. 가치 반복에서는 최대의 보상을 가져오는 행동 한 가지의 보상만을 반영
+- The value function of every state is zero-initialized and the policy is not considered separately. Then, the value functions of all states are updated simultaneously using the Bellman equation below
+- $v_{k+1} (s) = max_{a \in A} (R_s^a + \gamma \sum+{s' \in S} P_{ss'}^a v_k(s'))$
+- 평가 단계에서 충분한 반복을 거쳐 가치 최신화를 수행하면 단 한 차례의 평가만으로 최적값 도달 가능
+- 최대 보상을 얻는 방향으로만 가치 함수가 반복되어 계산. 결국 각 상태의 가치 함수를 계산할 때 택한 행동의 방향으로 정책이 결정
+
+
 

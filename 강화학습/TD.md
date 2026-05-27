@@ -22,4 +22,6 @@
 - 최대 가능도 추정
 
 ## 확실-등가 추정(Certainty-Equivalence Estimation)
-- If a specific model B is derived for an unknown model A based on a bootstrapping estimation method, then model B is 
+- If a specific model B is derived for an unknown model A based on a bootstrapping estimation method, then model B is assumed to possess a certain level of confidence regarding model A
+
+

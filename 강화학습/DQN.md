@@ -8,7 +8,7 @@
 ## Limitations of the before DQ
 - Training instability and non-convergence
 - 학습 불안정성의 원인
-    - 단순한 상관관계
+    - 표본 상관관계
     - Data distribution
     - Moving target value
 - DQN addresses these issues by introducing experience replay and a target network
@@ -39,10 +39,26 @@
 
 - 현재 선택된 행동을 수행해 결과 값과 표본을 얻지만 바로 평가에 이용하지 않고, 의도적으로 지연
 - 학습 불안정성을 유발하는 요인들 제거
-- 단순한 상관관계
+- 표본 상관관계
     - DL assumes that training samples are independently drawn from the data distribution
     - 하지만 강화학습은 표본 사이에 종속성 존재
     - 왜냐하면 현재 표본에서의 정책과 상태 전환 가능성에 의해 다음 표본이 생성
     - Training on highly correlated samples can prevent the network from learning an accurate Q-funciton
 - Changes in the data distribution
-    - In on-policy learning, Q-value updates can change the agent's policy, which in turn alters the distribution of the training data
+    - In on-policy learning, Q-value updates can change the agent's policy, which in turn alters the distribution of the training data.
+    - 이는 가중치의 발산을 유발, 국소 최솟값 수렴 또는 발산을 유발
+    - 반복 저장소에서 임의로 추출된 표본들은 다른 시간에서 수행된 표본이므로 표본 상관관계가 낮음
+    - Random sampling allows the Q-function to be updated using a diverse set of experiences, reducing bias in both the policy and the training data distribution while providing a smoothing effect
+
+### 3. 목표 신경망
+1. 목표 신경망을 이용하여 목표값 계산
+2. Compute the action-value $Q(s_j, a_j;\theta)$ using the main Q-netowrk parameterized by $\theta$
+3. 손실 함수 최소화되도록 학습
+4. Every C steps, update the target network $\theta^-$ with the parameters of the main Q-network $\theta$
+
+- The original Q-network is duplicated to create a dual-network architecture consisting of a main Q-network and a target Q-network
+- 학습 불안정성 개선
+- Main Q-network : Used to estimate the action-value Q for a given state-action pair. 매 단계마다 가중치 최신화
+- Target network : 최신화 기준값이 되는 목표 값 $y=r+\gamma max \hat Q$를 얻는데 이용. C 단계마다 가중치가 주 신경망과 동기화
+- Q-learning에서는 정답을 만드는 모델과 정답을 맞추는 모델이 동일해서 정답이 계속 바뀜
+

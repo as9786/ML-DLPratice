@@ -44,4 +44,26 @@
 - 이전 정책과 새 정책의 KL divergence가 일정 값보다 작아야 함
 - Maximize surrogate objective subject to KL(old policy, new policy) $\leq \delta$
 - 제약이 있는 최적화 문제를 품
-- 
+
+### 실제 최적화 (Conjugate gradient + Line search)
+- 위 제한된 최적화는 그대로 풀기 어려움
+- 정책이 신경망이면 가중치의 수가 매우 많음
+- 아래와 같은 근사 사용
+1. Surrogate objective 1차 근사
+2. KL constraint 2차 근사
+3. Conjugate gradient로 최산화 방향 계산
+4. Line search로 실제 step size 조정
+
+### Conjugate gradient
+- Ax=b
+- A가 너무 크면 역행렬을 구하기 어려움
+1. 일단 아무 값으로 시작
+2. 현재 오차의 잔차를 계산
+3. 오차를 줄이는 방향으로 이동
+4. 이전 방향과 겹치지 않는 새 방향을 만듦
+5. 반복
+
+### Line search
+- 특정 방향으로 얼마나 크게 이동할 것인가
+- Backtracking line search : 큰 step size로 시도 후 점차 줄여나가 안전한 지점을 찾음
+

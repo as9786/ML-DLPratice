@@ -20,5 +20,6 @@ $$L^{CPI}(\theta)=\hat{\mathbb{E}}_t\left[\frac{\pi_{\theta}(a_t \mid s_t)}{\pi_
 - 천천한 향상을 보장할 수 없음
 - 기존 정책과 많이 다른 정책에 penalty 부과
 - 새로운 목적 함수 제안
-- $L^{CLIP}(\theta)=\hat{E}_t[min(r_t(\theta)\hat A_t, \ clip(r_t(\theta), 1-\epsilon, 1+\epsilon) \hat A_t)]$
-- 
+
+$$L^{CLIP}(\theta)=\hat{E}_t[min(r_t(\theta)\hat A_t, \ clip(r_t(\theta), 1-\epsilon, 1+\epsilon) \hat A_t)]$$
+

@@ -12,4 +12,18 @@
 ### 2-1. Clipped surrogate objective
 - 확률 비율 : $r_t(\theta) = \frac{\pi_{\theta} (a_t|s_t)}{\pi_{\theta_{old}} (a_t|s_t)}$
 - 기존의 surrogate objective 함수에 적용
-- $L^{CPI}(\theta} = \hat{E_t}[\frac{\pi_{\theta} (a_t|s_t)}{\pi_{\theta_{old}} (a_t|s_t)} \hat{A_t}]=\hat{E_t}[r_t(\theta)}\hat{A_t}]$ 
+$$
+L^{CPI}(\theta)
+=
+\hat{\mathbb{E}}_t
+\left[
+\frac{\pi_{\theta}(a_t \mid s_t)}
+{\pi_{\theta_{\mathrm{old}}}(a_t \mid s_t)}
+\hat{A}_t
+\right]
+=
+\hat{\mathbb{E}}_t
+\left[
+r_t(\theta)\hat{A}_t
+\right]
+$$

@@ -23,3 +23,12 @@ $$L^{CPI}(\theta)=\hat{\mathbb{E}}_t\left[\frac{\pi_{\theta}(a_t \mid s_t)}{\pi_
 
 $$L^{CLIP}(\theta)=\hat{E}_t[min(r_t(\theta)\hat A_t, \ clip(r_t(\theta), 1-\epsilon, 1+\epsilon) \hat A_t)]$$
 
+- $\eta$ : 초매개변수, 기본값=0.2
+- 첫번째 항은 기존 목표. 두번째 항은 clipped probability ratio 적용
+- 위 두 개를 비교해 더 작은 값을 취함으로써 lower bound 형성
+
+### 2-2. Proximal policy optimization
+- 미분 가능하도록 수정
+- Policy surrogate + Value function error
+
+$$L^{CLIP+VF+S}_t (\theta) = \hat E_t [L^{CLIP}_t (\theta) - c_1 L^{VF}_t (\theta) + c_2 S[\pi_{\theta}](s_t)}$$ 

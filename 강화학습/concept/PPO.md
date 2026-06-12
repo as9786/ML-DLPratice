@@ -14,3 +14,11 @@
 - 기존의 surrogate objective 함수에 적용
 
 $$L^{CPI}(\theta)=\hat{\mathbb{E}}_t\left[\frac{\pi_{\theta}(a_t \mid s_t)}{\pi_{\theta_{\mathrm{old}}}(a_t \mid s_t)}\hat{A}_t\right]=\hat{\mathbb{E}}_t\left[r_t(\theta)\hat{A}_t\right]$$
+
+- CPI : Conservation Policy Iteration
+- 위 목적을 최대화하게 되면 정책 최신화가 큰 단계로 진행될 가능성이 있음
+- 천천한 향상을 보장할 수 없음
+- 기존 정책과 많이 다른 정책에 penalty 부과
+- 새로운 목적 함수 제안
+- $L^{CLIP}(\theta)=\hat{E}_t[min(r_t(\theta)\hat A_t, \ clip(r_t(\theta), 1-\epsilon, 1+\epsilon) \hat A_t)]$
+- 

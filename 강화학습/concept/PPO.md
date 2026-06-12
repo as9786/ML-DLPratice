@@ -35,4 +35,5 @@ $$L_t^{\mathrm{CLIP+VF+S}}(\theta)=\hat{E}_t\left[L_t^{\mathrm{CLIP}}(\theta)-c_
 
 - C : 각각 손실함의 비중을 결정하는 계수. $L_{VF}$ : 가치 함수의 제곱 잔차 손실, S : Entropy bonus
 - T만큼의 길이만큼 trajectory segment를 하나의 미니 배치로 사용
-- 
+- 매 반복마다 N개의 행동이 t만큼 data를 모아 최신화하는 방식
+- SGD를 통해 최신화 

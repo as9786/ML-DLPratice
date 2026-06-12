@@ -31,7 +31,7 @@ $$L^{CLIP}(\theta)=\hat{E}_t[min(r_t(\theta)\hat A_t, \ clip(r_t(\theta), 1-\eps
 - 미분 가능하도록 수정
 - Policy surrogate + Value function error
 
-$$L^{CLIP+VF+S}_t(\theta)=\hat{\mathbb{E}}_t\left[L^{CLIP}_t(\theta)-c_1L^{VF}_t(\theta)+c_2S[\pi_{\theta}](s_t)\right]$$
+$$L_t^{\mathrm{CLIP+VF+S}}(\theta)=\hat{E}_t\left[L_t^{\mathrm{CLIP}}(\theta)-c_1L_t^{\mathrm{VF}}(\theta)+c_2S(\pi_\theta)(s_t)\right]$$
 
 - C : 각각 손실함의 비중을 결정하는 계수. $L_{VF}$ : 가치 함수의 제곱 잔차 손실, S : Entropy bonus
 - T만큼의 길이만큼 trajectory segment를 하나의 미니 배치로 사용

@@ -23,6 +23,11 @@
 
 ## 2-1. Titling
 - Softmax는 vector의 최대값을 중심으로 크기를 조정
-- m : Block x의 최대값, l : softmax(x)를 정규화하기 위한 summation value
+- m : Block x의 최대값, l : softmax(x)를 정규화하기 위한 summation value (Softmax normalization statistics)
 
 $m(x) := max_i x_i$  $f(x) := [e^{x_i - m(x)}, ..., e^{x_B - m(x)}]$ $l(x) := \sum_i f(x)_i$ $softmax(x) := \frac{f(x)}{l(x)}$ 
+
+- Blocks의 l과 m을 활용해 softmax를 계산할 수 있음
+- Attention map을 HBM에 저장하지 않고도 순전파, 역전파를 진행 가능
+
+<img width="1260" height="754" alt="image" src="https://github.com/user-attachments/assets/68a54fbb-f133-483b-9978-782e3ace2ec3" />

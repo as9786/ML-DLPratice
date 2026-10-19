@@ -23,4 +23,6 @@
 
 ## 2-1. Titling
 - Softmax는 vector의 최대값을 중심으로 크기를 조정
-- 
+- m : Block x의 최대값, l : softmax(x)를 정규화하기 위한 summation value
+
+$m(x) := max_i x_i$  $f(x) := [e^{x_i - m(x)}, ..., e^{x_B - m(x)}]$ $l(x) := \sum_i f(x)_i$ $softmax(x) := \frac{f(x)}{l(x)}$ 
